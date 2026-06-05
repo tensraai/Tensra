@@ -227,18 +227,6 @@ const contactForm = document.getElementById('contact-form');
 const formSuccess = document.getElementById('form-success');
 const submitBtn   = document.getElementById('submit-btn');
 
-// ── EmailJS configuration ────────────────────────────────────
-// 1. Sign up at https://www.emailjs.com (free tier: 200 emails/month)
-// 2. Create an Email Service (Gmail, Outlook, etc.) → copy the Service ID
-// 3. Create an Email Template with variables: {{from_name}}, {{from_email}},
-//    {{service}}, {{budget}}, {{message}}, {{reply_to}}
-//    Set the "To Email" in the template to: aunarose184@gmail.com
-// 4. Copy your Public Key from Account → API Keys and paste it in index.html
-// 5. Replace the two IDs below with your own values
-const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // e.g. 'service_abc123'
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // e.g. 'template_xyz456'
-// ─────────────────────────────────────────────────────────────
-
 if (contactForm) {
   contactForm.addEventListener('submit', handleFormSubmit);
 }
@@ -250,26 +238,24 @@ function handleFormSubmit(e) {
 
   setSubmitState('loading');
 
-  // Collect form data
   const formData = new FormData(contactForm);
-  const data     = Object.fromEntries(formData.entries());
 
-  // Build the template params that match your EmailJS template variables
-  const templateParams = {
-    from_name:  data.name    || '',
-    from_email: data.email   || '',
-    service:    data.service || 'Not specified',
-    budget:     data.budget  || 'Not specified',
-    message:    data.message || '',
-    reply_to:   data.email   || '',
-  };
-
-  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
-    .then(() => {
-      showSuccess();
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    body: formData,
+  })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        showSuccess();
+        contactForm.reset();
+      } else {
+        console.error('Web3Forms error:', data);
+        setSubmitState('error');
+      }
     })
-    .catch((err) => {
-      console.error('EmailJS error:', err);
+    .catch(err => {
+      console.error('Submission error:', err);
       setSubmitState('error');
     });
 }
@@ -317,11 +303,11 @@ function setSubmitState(state) {
 
   if (state === 'loading') {
     submitBtn.disabled = true;
-    if (btnText) btnText.textContent = 'Sending…';
+    if (btnText) btnText.textContent = 'Sent';
     if (btnIcon) btnIcon.style.display = 'none';
   } else if (state === 'error') {
     submitBtn.disabled = false;
-    if (btnText) btnText.textContent = 'Send Failed — Try Again';
+    if (btnText) btnText.textContent = 'Try Again';
     if (btnIcon) btnIcon.style.display = '';
   }
 }

@@ -23,6 +23,10 @@
   <meta name="twitter:title" content="Tensra AI Engineering" />
   <meta name="twitter:description" content="Production-Ready AI Systems. Built for Real Workloads." />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,16 +34,6 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- EmailJS -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>
-    // Initialize EmailJS with your Public Key
-    // Replace 'YOUR_PUBLIC_KEY' after setting up your EmailJS account
-    (function(){
-      emailjs.init({ publicKey: 'YOUR_PUBLIC_KEY' });
-    })();
-  </script>
 </head>
 <body>
 
@@ -1079,78 +1073,169 @@
             </div>
           </div>
 
-          <div class="contact-form-wrapper">
-            <form class="contact-form" id="contact-form" novalidate aria-label="Contact form">
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label" for="name">Name <span class="required" aria-label="required">*</span></label>
-                  <input class="form-input" type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name" />
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="company">Company</label>
-                  <input class="form-input" type="text" id="company" name="company" placeholder="Company or agency" autocomplete="organization" />
-                </div>
-              </div>
+<div class="contact-form-wrapper">
+  <form
+    class="contact-form"
+    id="contact-form"
+    action="https://api.web3forms.com/submit"
+    method="POST"
+    novalidate
+    aria-label="Contact form"
+  >
+    <!-- Web3Forms Access Key -->
+    <input
+      type="hidden"
+      name="access_key"
+      value="38dadbee-3a05-417a-89c2-88414f9f8bd8"
+    />
 
-              <div class="form-group">
-                <label class="form-label" for="email">Email <span class="required" aria-label="required">*</span></label>
-                <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" />
-              </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label" for="name">
+          Name <span class="required" aria-label="required">*</span>
+        </label>
+        <input
+          class="form-input"
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your full name"
+          autocomplete="name"
+        />
+      </div>
 
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label" for="project-type">Project Type</label>
-                  <select class="form-select" id="project-type" name="project-type">
-                    <option value="" disabled selected>Select project type</option>
-                    <option value="audit">AI System Audit</option>
-                    <option value="rag">Private RAG Knowledge Base</option>
-                    <option value="agent">AI Agent Build / Fix</option>
-                    <option value="retainer">Ongoing Retainer Support</option>
-                    <option value="white-label">Agency / White Label</option>
-                    <option value="other">Other / Not Sure Yet</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="budget">Budget Range</label>
-                  <select class="form-select" id="budget" name="budget">
-                    <option value="" disabled selected>Select budget range</option>
-                    <option value="3-5k">$3,000 – $5,000</option>
-                    <option value="5-10k">$5,000 – $10,000</option>
-                    <option value="10-20k">$10,000 – $20,000</option>
-                    <option value="20k+">$20,000+</option>
-                    <option value="retainer">Monthly Retainer</option>
-                  </select>
-                </div>
-              </div>
+      <div class="form-group">
+        <label class="form-label" for="company">Company</label>
+        <input
+          class="form-input"
+          type="text"
+          id="company"
+          name="company"
+          placeholder="Company or agency"
+          autocomplete="organization"
+        />
+      </div>
+    </div>
 
-              <div class="form-group">
-                <label class="form-label" for="message">Message <span class="required" aria-label="required">*</span></label>
-                <textarea class="form-textarea" id="message" name="message" rows="5" placeholder="Describe your AI system or project. What's working? What isn't? What do you need?" required></textarea>
-              </div>
+    <div class="form-group">
+      <label class="form-label" for="email">
+        Email <span class="required" aria-label="required">*</span>
+      </label>
+      <input
+        class="form-input"
+        type="email"
+        id="email"
+        name="email"
+        placeholder="your@email.com"
+        autocomplete="email"
+      />
+    </div>
 
-              <button type="submit" class="btn btn-primary btn-full btn-lg" id="submit-btn">
-                <span class="btn-text">Send Message</span>
-                <svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label" for="project-type">Project Type</label>
+        <select
+          class="form-select"
+          id="project-type"
+          name="project_type"
+        >
+          <option value="" disabled selected>Select project type</option>
+          <option value="audit">AI System Audit</option>
+          <option value="rag">Private RAG Knowledge Base</option>
+          <option value="agent">AI Agent Build / Fix</option>
+          <option value="retainer">Ongoing Retainer Support</option>
+          <option value="white-label">Agency / White Label</option>
+          <option value="other">Other / Not Sure Yet</option>
+        </select>
+      </div>
 
-              <p class="form-privacy">We don't share your information with third parties.</p>
-            </form>
+      <div class="form-group">
+        <label class="form-label" for="budget">Budget Range</label>
+        <select
+          class="form-select"
+          id="budget"
+          name="budget"
+        >
+          <option value="" disabled selected>Select budget range</option>
+          <option value="3-5k">$3,000 – $5,000</option>
+          <option value="5-10k">$5,000 – $10,000</option>
+          <option value="10-20k">$10,000 – $20,000</option>
+          <option value="20k+">$20,000+</option>
+          <option value="retainer">Monthly Retainer</option>
+        </select>
+      </div>
+    </div>
 
-            <!-- Success message (hidden by default) -->
-            <div class="form-success" id="form-success" role="alert" aria-live="polite" hidden>
-              <div class="form-success-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
-                  <path d="M22 4L12 14.01l-3-3" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <h3>Message received</h3>
-              <p>We'll review your project details and respond within 24 hours.</p>
-            </div>
-          </div>
+    <div class="form-group">
+      <label class="form-label" for="message">
+        Message <span class="required" aria-label="required">*</span>
+      </label>
+      <textarea
+        class="form-textarea"
+        id="message"
+        name="message"
+        rows="5"
+        placeholder="Describe your AI system or project. What's working? What isn't? What do you need?"
+      ></textarea>
+    </div>
 
+    <button
+      type="submit"
+      class="btn btn-primary btn-full btn-lg"
+      id="submit-btn"
+    >
+      <span class="btn-text">Send Message</span>
+      <svg
+        class="btn-icon"
+        viewBox="0 0 16 16"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path
+          d="M3 8h10M9 4l4 4-4 4"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+
+    <p class="form-privacy">
+      We don't share your information with third parties.
+    </p>
+  </form>
+
+  <!-- Success Message -->
+  <div
+    class="form-success"
+    id="form-success"
+    role="alert"
+    aria-live="polite"
+    hidden
+  >
+    <div class="form-success-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M22 11.08V12a10 10 0 11-5.93-9.14"
+          stroke="#00D4FF"
+          stroke-width="1.5"
+          stroke-linecap="round"
+        />
+        <path
+          d="M22 4L12 14.01l-3-3"
+          stroke="#00D4FF"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </div>
+
+    <h3>Message received</h3>
+    <p>We'll review your project details and respond within 24 hours.</p>
+  </div>
+</div>
         </div>
       </div>
     </section>
