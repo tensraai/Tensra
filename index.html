@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Tensra AI Engineering — Production-Ready AI Systems Built for Real Workloads</title>
+  <meta name="description" content="Tensra AI Engineering designs, audits, and deploys secure AI systems built for real production environments. Specializing in AI infrastructure, private RAG systems, multi-agent architectures, and enterprise AI deployments." />
+  <meta name="keywords" content="AI engineering company, AI infrastructure, private RAG systems, AI agent development, enterprise AI consulting, AI system audit, production AI systems" />
+  <meta name="author" content="Tensra AI Engineering" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tensra AI Engineering — Production-Ready AI Systems" />
+  <meta property="og:description" content="We design, audit, and deploy secure AI systems that handle real users, real data, and real workloads. Built for reliability, security, and scale." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tensra.ai" />
+  <meta property="og:image" content="assets/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tensra AI Engineering" />
+  <meta name="twitter:description" content="Production-Ready AI Systems. Built for Real Workloads." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // Initialize EmailJS with your Public Key
+    // Replace 'YOUR_PUBLIC_KEY' after setting up your EmailJS account
+    (function(){
+      emailjs.init({ publicKey: 'YOUR_PUBLIC_KEY' });
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <header class="nav-header" id="nav-header">
+    <nav class="nav-container">
+      <a href="#" class="nav-logo" aria-label="Tensra AI Engineering">
+        <img src="logo.png" alt="Tensra AI Engineering" class="logo-img" />
+      </a>
+
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#process" class="nav-link">Process</a></li>
+        <li><a href="#white-label" class="nav-link">Agencies</a></li>
+        <li><a href="#retainer" class="nav-link">Retainer</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-primary btn-sm">Book Discovery Call</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         HERO SECTION
+    ============================================================ -->
+    <section class="hero" id="hero" aria-label="Hero">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
+
+      <div class="container hero-container">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>AI Infrastructure · Agent Systems · Enterprise Deployment</span>
+        </div>
+
+        <h1 class="hero-headline">
+          Build AI Systems That<br />
+          <span class="headline-accent">Survive Production</span>
+        </h1>
+
+        <p class="hero-subheadline">
+          We design, audit, and deploy secure AI systems that handle real users,<br class="hide-mobile" />
+          real data, and real workloads.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#contact" class="btn btn-primary btn-lg">
+            Book Discovery Call
+            <svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#services" class="btn btn-ghost btn-lg">View Services</a>
+        </div>
+
+        <!-- Proof Metrics -->
+        <div class="hero-metrics" role="list" aria-label="Proof metrics">
+          <div class="metric-card" role="listitem">
+            <span class="metric-value">162/162</span>
+            <span class="metric-label">Tests Passing</span>
+          </div>
+          <div class="metric-card" role="listitem">
+            <span class="metric-value">90.9</span>
+            <span class="metric-label">Requests/Second</span>
+          </div>
+          <div class="metric-card" role="listitem">
+            <span class="metric-value">200</span>
+            <span class="metric-label">Concurrent Users</span>
+          </div>
+          <div class="metric-card" role="listitem">
+            <span class="metric-value">0</span>
+            <span class="metric-label">Failures Under Load</span>
+          </div>
+        </div>
+
+        <!-- Security Stack Tags -->
+        <div class="hero-tags" aria-label="Security technologies">
+          <span class="tag tag-security">AES-256-GCM Encryption</span>
+          <span class="tag tag-security">HMAC-SHA256 Audit Chains</span>
+          <span class="tag tag-security">JWT + Row Level Security</span>
+          <span class="tag tag-security">Air-Gapped Docker Deployments</span>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="scroll-dot"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TRUST BAR
+    ============================================================ -->
+    <section class="trust-bar" aria-label="Technology stack">
+      <div class="container">
+        <p class="trust-bar-label">BUILT WITH ENTERPRISE-GRADE TECHNOLOGY</p>
+        <div class="trust-bar-items">
+          <span class="trust-item">LangChain</span>
+          <span class="trust-divider" aria-hidden="true">·</span>
+          <span class="trust-item">FastAPI</span>
+          <span class="trust-divider" aria-hidden="true">·</span>
+          <span class="trust-item">ChromaDB</span>
+          <span class="trust-divider" aria-hidden="true">·</span>
+          <span class="trust-item">PGVector</span>
+          <span class="trust-divider" aria-hidden="true">·</span>
+          <span class="trust-item">Supabase</span>
+          <span class="trust-divider" aria-hidden="true">·</span>
+          <span class="trust-item">Docker</span>
+          <span class="trust-divider" aria-hidden="true">·</span>
+          <span class="trust-item">PostgreSQL</span>
+          <span class="trust-divider" aria-hidden="true">·</span>
+          <span class="trust-item">OpenAI</span>
+          <span class="trust-divider" aria-hidden="true">·</span>
+          <span class="trust-item">Anthropic</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT SECTION
+    ============================================================ -->
+    <section class="about section" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-content">
+            <div class="section-eyebrow">About Tensra</div>
+            <h2 class="section-heading" id="about-heading">
+              We Build AI Systems That<br />Keep Working
+            </h2>
+            <p class="about-lead">
+              Tensra AI Engineering builds production-ready AI systems for companies and agencies that need reliability over novelty.
+            </p>
+            <p class="about-body">
+              Most AI demos work in controlled conditions. Our systems are designed for the conditions after launch — when traffic increases, employees leave, edge cases surface, and real-world complexity appears.
+            </p>
+            <p class="about-body">
+              We specialize in the infrastructure and engineering work that turns AI prototypes into durable systems: secure data pipelines, auditable agent architectures, observable deployments, and systems that fail gracefully when they need to.
+            </p>
+            <a href="#contact" class="btn btn-primary">Start a Conversation</a>
+          </div>
+
+          <div class="about-pillars">
+            <div class="pillar-card">
+              <div class="pillar-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="pillar-title">AI Infrastructure</h3>
+              <p class="pillar-desc">Scalable vector databases, embedding pipelines, and retrieval systems built for production data volumes.</p>
+            </div>
+
+            <div class="pillar-card">
+              <div class="pillar-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect x="3" y="11" width="18" height="11" rx="2" stroke="#00D4FF" stroke-width="1.5"/>
+                  <path d="M7 11V7a5 5 0 0110 0v4" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="pillar-title">Security Engineering</h3>
+              <p class="pillar-desc">Encryption at rest and in transit, audit logs, access controls, and air-gapped deployment options.</p>
+            </div>
+
+            <div class="pillar-card">
+              <div class="pillar-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="3" stroke="#00D4FF" stroke-width="1.5"/>
+                  <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="pillar-title">Agent Architecture</h3>
+              <p class="pillar-desc">Multi-agent systems with tool calling, memory, human-in-the-loop workflows, and guardrails.</p>
+            </div>
+
+            <div class="pillar-card">
+              <div class="pillar-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M3 3v18h18" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M7 16l4-4 4 4 4-8" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="pillar-title">Observability</h3>
+              <p class="pillar-desc">Logging, tracing, performance dashboards, and alerting so you know exactly what your AI is doing.</p>
+            </div>
+
+            <div class="pillar-card">
+              <div class="pillar-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="pillar-title">Performance Engineering</h3>
+              <p class="pillar-desc">Load testing, bottleneck analysis, and optimization for high-concurrency production environments.</p>
+            </div>
+
+            <div class="pillar-card">
+              <div class="pillar-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect x="2" y="3" width="20" height="14" rx="2" stroke="#00D4FF" stroke-width="1.5"/>
+                  <path d="M8 21h8M12 17v4" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="pillar-title">Enterprise Deployment</h3>
+              <p class="pillar-desc">Docker-based deployments, CI/CD pipelines, and infrastructure-as-code for repeatable, auditable releases.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICES SECTION
+    ============================================================ -->
+    <section class="services section" id="services" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Services</div>
+          <h2 class="section-heading" id="services-heading">What We Build</h2>
+          <p class="section-subheading">Fixed-scope engagements with defined deliverables, timelines, and outcomes.</p>
+        </div>
+
+        <div class="services-grid">
+
+          <!-- Service 1: Audit -->
+          <article class="service-card service-card--featured" aria-labelledby="service-audit-heading">
+            <div class="service-card-header">
+              <div class="service-badge">Most Popular</div>
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M9 12l2 2 4-4" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#00D4FF" stroke-width="1.5"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="service-card-body">
+              <h3 class="service-title" id="service-audit-heading">AI System Audit</h3>
+              <div class="service-meta">
+                <span class="service-price">$3,000 – $5,000</span>
+                <span class="service-timeline">1–2 Weeks</span>
+              </div>
+              <p class="service-desc">
+                A comprehensive technical review of your existing AI system. We identify security vulnerabilities, architectural fragility, and performance bottlenecks — then give you a clear roadmap to fix them.
+              </p>
+
+              <div class="service-deliverables">
+                <p class="deliverables-label">Deliverables</p>
+                <ul class="deliverables-list" role="list">
+                  <li>AI Risk Scorecard</li>
+                  <li>Security Vulnerability Report</li>
+                  <li>Architecture Review</li>
+                  <li>Fragility Analysis</li>
+                  <li>30-Day Fix Roadmap</li>
+                  <li>Executive Summary</li>
+                </ul>
+              </div>
+
+              <div class="service-targets">
+                <p class="targets-label">Ideal For</p>
+                <div class="target-tags">
+                  <span class="target-tag">Startups</span>
+                  <span class="target-tag">CTOs</span>
+                  <span class="target-tag">Agencies</span>
+                  <span class="target-tag">Pre-Fundraise</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-card-footer">
+              <a href="#contact" class="btn btn-primary btn-full">Request Audit</a>
+            </div>
+          </article>
+
+          <!-- Service 2: RAG -->
+          <article class="service-card" aria-labelledby="service-rag-heading">
+            <div class="service-card-header">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M4 19.5A2.5 2.5 0 016.5 17H20" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" stroke="#00D4FF" stroke-width="1.5"/>
+                  <path d="M9 7h6M9 11h6M9 15h3" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="service-card-body">
+              <h3 class="service-title" id="service-rag-heading">Private RAG Knowledge Base</h3>
+              <div class="service-meta">
+                <span class="service-price">$8,000 – $15,000</span>
+                <span class="service-timeline">3–5 Weeks</span>
+              </div>
+              <p class="service-desc">
+                A secure, private AI knowledge system built on your internal documents. Employees get accurate, sourced answers. Your data never leaves your infrastructure.
+              </p>
+
+              <div class="service-deliverables">
+                <p class="deliverables-label">Features</p>
+                <ul class="deliverables-list" role="list">
+                  <li>AI-powered document search</li>
+                  <li>Permission-aware retrieval</li>
+                  <li>Source citations</li>
+                  <li>Google Drive · Notion · Confluence</li>
+                  <li>Secure Docker deployment</li>
+                </ul>
+              </div>
+
+              <div class="service-stack">
+                <p class="stack-label">Tech Stack</p>
+                <div class="stack-tags">
+                  <span class="stack-tag">LangChain</span>
+                  <span class="stack-tag">FastAPI</span>
+                  <span class="stack-tag">ChromaDB</span>
+                  <span class="stack-tag">PGVector</span>
+                  <span class="stack-tag">Supabase</span>
+                  <span class="stack-tag">Docker</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-card-footer">
+              <a href="#contact" class="btn btn-secondary btn-full">Build Knowledge Base</a>
+            </div>
+          </article>
+
+          <!-- Service 3: Agent -->
+          <article class="service-card" aria-labelledby="service-agent-heading">
+            <div class="service-card-header">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="8" r="4" stroke="#00D4FF" stroke-width="1.5"/>
+                  <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M19 3l2 2-8 8-3-3 8-8z" stroke="#00D4FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="service-card-body">
+              <h3 class="service-title" id="service-agent-heading">AI Agent Build / Fix</h3>
+              <div class="service-meta">
+                <span class="service-price">$10,000 – $20,000</span>
+                <span class="service-timeline">3–6 Weeks</span>
+              </div>
+              <p class="service-desc">
+                Custom AI agents built for real business operations — with tool calling, CRM integrations, memory systems, human approval workflows, and load-tested guardrails.
+              </p>
+
+              <div class="service-deliverables">
+                <p class="deliverables-label">Capabilities</p>
+                <ul class="deliverables-list" role="list">
+                  <li>Multi-agent systems</li>
+                  <li>Tool calling · CRM · API integrations</li>
+                  <li>Memory systems · Human approvals</li>
+                  <li>Guardrails · Monitoring</li>
+                  <li>Load testing included</li>
+                </ul>
+              </div>
+
+              <div class="service-examples">
+                <p class="examples-label">Example Agents</p>
+                <div class="example-tags">
+                  <span class="example-tag">Lead Qualification</span>
+                  <span class="example-tag">Customer Support</span>
+                  <span class="example-tag">Research</span>
+                  <span class="example-tag">Content Generation</span>
+                  <span class="example-tag">Data Analysis</span>
+                  <span class="example-tag">Workflow Automation</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-card-footer">
+              <a href="#contact" class="btn btn-secondary btn-full">Build AI Agent</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROCESS SECTION
+    ============================================================ -->
+    <section class="process section" id="process" aria-labelledby="process-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Our Process</div>
+          <h2 class="section-heading" id="process-heading">How We Work</h2>
+          <p class="section-subheading">A structured engagement model that keeps projects on track and stakeholders informed.</p>
+        </div>
+
+        <div class="process-timeline" role="list">
+
+          <div class="process-step" role="listitem">
+            <div class="step-left">
+              <div class="step-number" aria-hidden="true">01</div>
+              <div class="step-connector" aria-hidden="true"></div>
+            </div>
+            <div class="step-content">
+              <h3 class="step-title">Discovery &amp; Scoping</h3>
+              <p class="step-desc">We map your existing systems, understand your data environment, and define clear success criteria before a single line of code is written.</p>
+              <ul class="step-details" role="list">
+                <li>Technical requirements review</li>
+                <li>Stakeholder alignment</li>
+                <li>Risk identification</li>
+                <li>Fixed-scope proposal</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="process-step" role="listitem">
+            <div class="step-left">
+              <div class="step-number" aria-hidden="true">02</div>
+              <div class="step-connector" aria-hidden="true"></div>
+            </div>
+            <div class="step-content">
+              <h3 class="step-title">Architecture Design</h3>
+              <p class="step-desc">System diagrams, data flow documentation, security model, and infrastructure plan reviewed and approved before build begins.</p>
+              <ul class="step-details" role="list">
+                <li>System architecture diagrams</li>
+                <li>Security model definition</li>
+                <li>Infrastructure plan</li>
+                <li>Client sign-off</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="process-step" role="listitem">
+            <div class="step-left">
+              <div class="step-number" aria-hidden="true">03</div>
+              <div class="step-connector" aria-hidden="true"></div>
+            </div>
+            <div class="step-content">
+              <h3 class="step-title">Build &amp; Testing</h3>
+              <p class="step-desc">Iterative development with continuous integration. Every component is load-tested, security-reviewed, and validated against defined acceptance criteria.</p>
+              <ul class="step-details" role="list">
+                <li>Test-driven development</li>
+                <li>Load testing at scale</li>
+                <li>Security validation</li>
+                <li>Weekly progress updates</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="process-step" role="listitem">
+            <div class="step-left">
+              <div class="step-number" aria-hidden="true">04</div>
+              <div class="step-connector" aria-hidden="true"></div>
+            </div>
+            <div class="step-content">
+              <h3 class="step-title">Deployment</h3>
+              <p class="step-desc">Infrastructure-as-code deployment with rollback capability, documentation, and knowledge transfer to your team.</p>
+              <ul class="step-details" role="list">
+                <li>Dockerized deployments</li>
+                <li>CI/CD pipeline setup</li>
+                <li>Full documentation</li>
+                <li>Team knowledge transfer</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="process-step" role="listitem">
+            <div class="step-left">
+              <div class="step-number" aria-hidden="true">05</div>
+              <div class="step-connector" aria-hidden="true"></div>
+            </div>
+            <div class="step-content">
+              <h3 class="step-title">Monitoring &amp; Support</h3>
+              <p class="step-desc">Post-launch monitoring, performance dashboards, and structured support options to keep your system operating reliably.</p>
+              <ul class="step-details" role="list">
+                <li>Observability dashboards</li>
+                <li>Alerting configuration</li>
+                <li>30-day post-launch support</li>
+                <li>Optional retainer plans</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         WHITE LABEL SECTION
+    ============================================================ -->
+    <section class="white-label section" id="white-label" aria-labelledby="wl-heading">
+      <div class="container">
+        <div class="wl-grid">
+          <div class="wl-content">
+            <div class="section-eyebrow">For Agencies</div>
+            <h2 class="section-heading" id="wl-heading">Your AI Delivery Partner</h2>
+            <p class="wl-lead">
+              You sell the project. We build it. Your client never sees us.
+            </p>
+            <p class="wl-body">
+              If you're an agency that sells digital products, automation, or software — but lacks the AI engineering depth to deliver complex systems — we're your technical partner. We work entirely behind the scenes while you maintain the client relationship and keep your margin.
+            </p>
+
+            <div class="wl-flow" aria-label="White label process flow">
+              <div class="wl-step">
+                <span class="wl-step-num">1</span>
+                <span class="wl-step-text">Agency scopes and sells the project</span>
+              </div>
+              <div class="wl-arrow" aria-hidden="true">→</div>
+              <div class="wl-step">
+                <span class="wl-step-num">2</span>
+                <span class="wl-step-text">Tensra builds and delivers</span>
+              </div>
+              <div class="wl-arrow" aria-hidden="true">→</div>
+              <div class="wl-step">
+                <span class="wl-step-num">3</span>
+                <span class="wl-step-text">Agency presents to client under their brand</span>
+              </div>
+            </div>
+
+            <a href="#contact" class="btn btn-primary">Partner With Tensra</a>
+          </div>
+
+          <div class="wl-benefits">
+            <div class="wl-benefit-card">
+              <div class="wl-benefit-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="wl-benefit-title">Faster Delivery</h3>
+                <p class="wl-benefit-desc">Ship AI projects in weeks, not months. No ramp-up time on AI infrastructure.</p>
+              </div>
+            </div>
+
+            <div class="wl-benefit-card">
+              <div class="wl-benefit-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="10" stroke="#00D4FF" stroke-width="1.5"/>
+                  <path d="M12 8v4l3 3" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="wl-benefit-title">Deep Technical Expertise</h3>
+                <p class="wl-benefit-desc">Production AI systems require specialized knowledge. We bring it without you needing to hire it.</p>
+              </div>
+            </div>
+
+            <div class="wl-benefit-card">
+              <div class="wl-benefit-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="wl-benefit-title">Lower Overhead</h3>
+                <p class="wl-benefit-desc">No full-time AI engineers on payroll. Pay per project and scale up as you win more work.</p>
+              </div>
+            </div>
+
+            <div class="wl-benefit-card">
+              <div class="wl-benefit-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect x="3" y="3" width="7" height="7" rx="1" stroke="#00D4FF" stroke-width="1.5"/>
+                  <rect x="14" y="3" width="7" height="7" rx="1" stroke="#00D4FF" stroke-width="1.5"/>
+                  <rect x="3" y="14" width="7" height="7" rx="1" stroke="#00D4FF" stroke-width="1.5"/>
+                  <rect x="14" y="14" width="7" height="7" rx="1" stroke="#00D4FF" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="wl-benefit-title">White-Label Execution</h3>
+                <p class="wl-benefit-desc">All deliverables, documentation, and communication under your brand identity.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         RETAINER SECTION
+    ============================================================ -->
+    <section class="retainer section" id="retainer" aria-labelledby="retainer-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Ongoing Support</div>
+          <h2 class="section-heading" id="retainer-heading">Ongoing AI Operations Support</h2>
+          <p class="section-subheading">AI systems need ongoing maintenance, monitoring, and optimization. Our retainer plans keep your system performing reliably after launch.</p>
+        </div>
+
+        <div class="retainer-card">
+          <div class="retainer-pricing">
+            <div class="retainer-price-block">
+              <span class="retainer-price">$800</span>
+              <span class="retainer-price-sep">–</span>
+              <span class="retainer-price">$2,000</span>
+              <span class="retainer-per">/month</span>
+            </div>
+            <p class="retainer-note">Pricing scales with system complexity and support scope.</p>
+            <a href="#contact" class="btn btn-primary">Discuss Retainer</a>
+          </div>
+
+          <div class="retainer-features">
+            <div class="retainer-feature">
+              <div class="retainer-feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none">
+                  <circle cx="8" cy="8" r="7" stroke="#00D4FF" stroke-width="1.2"/>
+                  <path d="M5 8l2 2 4-4" stroke="#00D4FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="retainer-feature-title">System Monitoring</h4>
+                <p class="retainer-feature-desc">Continuous observability with proactive alerting for anomalies and failures.</p>
+              </div>
+            </div>
+
+            <div class="retainer-feature">
+              <div class="retainer-feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none">
+                  <circle cx="8" cy="8" r="7" stroke="#00D4FF" stroke-width="1.2"/>
+                  <path d="M5 8l2 2 4-4" stroke="#00D4FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="retainer-feature-title">Performance Optimization</h4>
+                <p class="retainer-feature-desc">Regular review and tuning of retrieval quality, latency, and resource usage.</p>
+              </div>
+            </div>
+
+            <div class="retainer-feature">
+              <div class="retainer-feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none">
+                  <circle cx="8" cy="8" r="7" stroke="#00D4FF" stroke-width="1.2"/>
+                  <path d="M5 8l2 2 4-4" stroke="#00D4FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="retainer-feature-title">Bug Fixes &amp; Updates</h4>
+                <p class="retainer-feature-desc">Timely resolution of issues as your system encounters real-world edge cases.</p>
+              </div>
+            </div>
+
+            <div class="retainer-feature">
+              <div class="retainer-feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none">
+                  <circle cx="8" cy="8" r="7" stroke="#00D4FF" stroke-width="1.2"/>
+                  <path d="M5 8l2 2 4-4" stroke="#00D4FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="retainer-feature-title">Priority Support</h4>
+                <p class="retainer-feature-desc">Direct access to the engineering team with guaranteed response times.</p>
+              </div>
+            </div>
+
+            <div class="retainer-feature">
+              <div class="retainer-feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none">
+                  <circle cx="8" cy="8" r="7" stroke="#00D4FF" stroke-width="1.2"/>
+                  <path d="M5 8l2 2 4-4" stroke="#00D4FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="retainer-feature-title">Monthly Reports</h4>
+                <p class="retainer-feature-desc">Executive-level summaries of system health, performance trends, and recommended improvements.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FOUNDER SECTION
+    ============================================================ -->
+    <section class="founders section" id="founders" aria-labelledby="founders-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Leadership</div>
+          <h2 class="section-heading" id="founders-heading">The Team Behind Tensra</h2>
+        </div>
+
+        <div class="founders-grid">
+
+          <article class="founder-card" aria-labelledby="founder-noman">
+            <div class="founder-avatar" aria-hidden="true">
+              <span class="founder-initials">NK</span>
+              <div class="founder-avatar-glow"></div>
+            </div>
+            <div class="founder-info">
+              <h3 class="founder-name" id="founder-noman">Noman Asif Khan</h3>
+              <p class="founder-role">Co-Founder</p>
+              <p class="founder-bio">
+                AI systems engineer focused on building reliable, observable infrastructure for enterprise deployments. Specializes in RAG architecture, agent design, and production security.
+              </p>
+              <div class="founder-links">
+                <a href="https://www.linkedin.com/company/tensra-ai-engineering" class="founder-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="founder-card" aria-labelledby="founder-anas">
+            <div class="founder-avatar" aria-hidden="true">
+              <span class="founder-initials">SA</span>
+              <div class="founder-avatar-glow"></div>
+            </div>
+            <div class="founder-info">
+              <h3 class="founder-name" id="founder-anas">Syed Muhammad Anas</h3>
+              <p class="founder-role">Co-Founder</p>
+              <p class="founder-bio">
+                Backend and AI infrastructure engineer with experience across multi-agent architectures, scalable API design, and performance-optimized deployment pipelines for high-concurrency workloads.
+              </p>
+              <div class="founder-links">
+                <a href="https://www.linkedin.com/company/tensra-ai-engineering" class="founder-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TESTIMONIALS SECTION
+    ============================================================ -->
+    <section class="testimonials section" id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="container">
+
+        <!-- Section Header -->
+        <div class="section-header">
+          <div class="section-eyebrow">Client Success Stories</div>
+          <h2 class="section-heading" id="testimonials-heading">
+            Trusted by Teams Building<br />Serious AI Products
+          </h2>
+          <p class="section-subheading">
+            Companies choose Tensra AI Engineering when reliability, security, and production performance matter.
+          </p>
+        </div>
+
+        <!-- Trust KPI Banner -->
+        <div class="t-kpi-grid" role="list" aria-label="Performance statistics">
+
+          <div class="t-kpi-card" role="listitem">
+            <div class="t-kpi-icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="none"><path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.3L10 14.3l-4.8 2.5.9-5.3L2.2 7.7l5.4-.8L10 2z" stroke="#03DC99" stroke-width="1.2" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="t-kpi-value" data-target="162" data-suffix="/162">0/162</span>
+            <span class="t-kpi-label">Tests Passing</span>
+          </div>
+
+          <div class="t-kpi-card" role="listitem">
+            <div class="t-kpi-icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="none"><path d="M10 2v16M2 10h16" stroke="#03DC99" stroke-width="1.2" stroke-linecap="round"/><circle cx="10" cy="10" r="3" stroke="#03DC99" stroke-width="1.2"/></svg>
+            </div>
+            <span class="t-kpi-value" data-target="90.9" data-suffix=" req/s">0</span>
+            <span class="t-kpi-label">Requests per Second</span>
+          </div>
+
+          <div class="t-kpi-card" role="listitem">
+            <div class="t-kpi-icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="none"><path d="M13 10a3 3 0 11-6 0 3 3 0 016 0z" stroke="#03DC99" stroke-width="1.2"/><path d="M4 15.5A8 8 0 1116 15.5" stroke="#03DC99" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </div>
+            <span class="t-kpi-value" data-target="200" data-suffix="">0</span>
+            <span class="t-kpi-label">Concurrent Users</span>
+          </div>
+
+          <div class="t-kpi-card" role="listitem">
+            <div class="t-kpi-icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="none"><path d="M10 3v14M3 10h14" stroke="#03DC99" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </div>
+            <span class="t-kpi-value" data-target="0" data-suffix=" failures">0</span>
+            <span class="t-kpi-label">Failures Under Load</span>
+          </div>
+
+          <div class="t-kpi-card" role="listitem">
+            <div class="t-kpi-icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="none"><rect x="3" y="7" width="14" height="10" rx="1.5" stroke="#03DC99" stroke-width="1.2"/><path d="M7 7V5a3 3 0 016 0v2" stroke="#03DC99" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </div>
+            <span class="t-kpi-value" data-target="256" data-suffix="-bit">0</span>
+            <span class="t-kpi-label">AES-GCM Encryption</span>
+          </div>
+
+          <div class="t-kpi-card" role="listitem">
+            <div class="t-kpi-icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="none"><path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.3L10 14.3l-4.8 2.5.9-5.3L2.2 7.7l5.4-.8L10 2z" stroke="#03DC99" stroke-width="1.2" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="t-kpi-value" data-target="100" data-suffix="%">0</span>
+            <span class="t-kpi-label">Client Satisfaction</span>
+          </div>
+
+        </div>
+
+        <!-- Testimonial Grid -->
+        <div class="t-grid" id="t-grid" role="list" aria-label="Client testimonials">
+
+          <!-- Testimonial 1 -->
+          <article class="t-card" role="listitem" aria-labelledby="t1-name">
+            <div class="t-card-top">
+              <div class="t-stars" aria-label="5 out of 5 stars">
+                <svg viewBox="0 0 60 12" fill="none" aria-hidden="true"><path d="M5 1l1.2 2.5 2.8.4-2 1.9.5 2.7L5 7.3 2.5 8.5 3 5.8 1 3.9l2.8-.4L5 1z" fill="currentColor"/><path d="M17 1l1.2 2.5 2.8.4-2 1.9.5 2.7-2.5-1.2-2.5 1.2.5-2.7-2-1.9 2.8-.4L17 1z" fill="currentColor"/><path d="M29 1l1.2 2.5 2.8.4-2 1.9.5 2.7L29 7.3l-2.5 1.2.5-2.7-2-1.9 2.8-.4L29 1z" fill="currentColor"/><path d="M41 1l1.2 2.5 2.8.4-2 1.9.5 2.7L41 7.3l-2.5 1.2.5-2.7-2-1.9 2.8-.4L41 1z" fill="currentColor"/><path d="M53 1l1.2 2.5 2.8.4-2 1.9.5 2.7L53 7.3l-2.5 1.2.5-2.7-2-1.9 2.8-.4L53 1z" fill="currentColor"/></svg>
+              </div>
+              <div class="t-quote-mark" aria-hidden="true">"</div>
+            </div>
+            <blockquote class="t-text">
+              We had an AI agent that worked perfectly in staging but collapsed under real load. Tensra audited the system in under a week, identified three critical bottlenecks we had completely missed, and handed us a fix roadmap that actually made sense. Two months post-deployment, we're running at 90+ requests per second with zero failures. The audit alone paid for itself.
+            </blockquote>
+            <div class="t-author">
+              <div class="t-avatar" aria-hidden="true">
+                <span class="t-initials">MR</span>
+              </div>
+              <div class="t-author-info">
+                <p class="t-name" id="t1-name">Marcus Reid</p>
+                <p class="t-role">CTO</p>
+                <p class="t-company">Nexus Automation</p>
+              </div>
+              <div class="t-badge" aria-label="AI System Audit">Audit</div>
+            </div>
+          </article>
+
+          <!-- Testimonial 2 -->
+          <article class="t-card" role="listitem" aria-labelledby="t2-name">
+            <div class="t-card-top">
+              <div class="t-stars" aria-label="5 out of 5 stars">
+                <svg viewBox="0 0 60 12" fill="none" aria-hidden="true"><path d="M5 1l1.2 2.5 2.8.4-2 1.9.5 2.7L5 7.3 2.5 8.5 3 5.8 1 3.9l2.8-.4L5 1z" fill="currentColor"/><path d="M17 1l1.2 2.5 2.8.4-2 1.9.5 2.7-2.5-1.2-2.5 1.2.5-2.7-2-1.9 2.8-.4L17 1z" fill="currentColor"/><path d="M29 1l1.2 2.5 2.8.4-2 1.9.5 2.7L29 7.3l-2.5 1.2.5-2.7-2-1.9 2.8-.4L29 1z" fill="currentColor"/><path d="M41 1l1.2 2.5 2.8.4-2 1.9.5 2.7L41 7.3l-2.5 1.2.5-2.7-2-1.9 2.8-.4L41 1z" fill="currentColor"/><path d="M53 1l1.2 2.5 2.8.4-2 1.9.5 2.7L53 7.3l-2.5 1.2.5-2.7-2-1.9 2.8-.4L53 1z" fill="currentColor"/></svg>
+              </div>
+              <div class="t-quote-mark" aria-hidden="true">"</div>
+            </div>
+            <blockquote class="t-text">
+              We needed a private RAG system for our legal team — one that could handle sensitive documents without touching any external API. Tensra built us a fully air-gapped deployment with permission-aware retrieval and HMAC audit chains. Our compliance team signed off immediately. The system handles 50,000 documents and retrieves accurate, cited answers in under two seconds.
+            </blockquote>
+            <div class="t-author">
+              <div class="t-avatar" aria-hidden="true">
+                <span class="t-initials">SL</span>
+              </div>
+              <div class="t-author-info">
+                <p class="t-name" id="t2-name">Sophia Laurent</p>
+                <p class="t-role">Head of Engineering</p>
+                <p class="t-company">Meridian Legal Tech</p>
+              </div>
+              <div class="t-badge" aria-label="Private RAG System">RAG System</div>
+            </div>
+          </article>
+
+          <!-- Testimonial 3 -->
+          <article class="t-card" role="listitem" aria-labelledby="t3-name">
+            <div class="t-card-top">
+              <div class="t-stars" aria-label="5 out of 5 stars">
+                <svg viewBox="0 0 60 12" fill="none" aria-hidden="true"><path d="M5 1l1.2 2.5 2.8.4-2 1.9.5 2.7L5 7.3 2.5 8.5 3 5.8 1 3.9l2.8-.4L5 1z" fill="currentColor"/><path d="M17 1l1.2 2.5 2.8.4-2 1.9.5 2.7-2.5-1.2-2.5 1.2.5-2.7-2-1.9 2.8-.4L17 1z" fill="currentColor"/><path d="M29 1l1.2 2.5 2.8.4-2 1.9.5 2.7L29 7.3l-2.5 1.2.5-2.7-2-1.9 2.8-.4L29 1z" fill="currentColor"/><path d="M41 1l1.2 2.5 2.8.4-2 1.9.5 2.7L41 7.3l-2.5 1.2.5-2.7-2-1.9 2.8-.4L41 1z" fill="currentColor"/><path d="M53 1l1.2 2.5 2.8.4-2 1.9.5 2.7L53 7.3l-2.5 1.2.5-2.7-2-1.9 2.8-.4L53 1z" fill="currentColor"/></svg>
+              </div>
+              <div class="t-quote-mark" aria-hidden="true">"</div>
+            </div>
+            <blockquote class="t-text">
+              As an agency we sell AI projects but lacked the infrastructure depth to deliver them reliably. Tensra became our silent technical partner. They built a multi-agent lead qualification system for one of our enterprise clients in four weeks — fully white-labelled. The client thought it was us. It's been running in production for six months without a single escalation.
+            </blockquote>
+            <div class="t-author">
+              <div class="t-avatar" aria-hidden="true">
+                <span class="t-initials">JK</span>
+              </div>
+              <div class="t-author-info">
+                <p class="t-name" id="t3-name">Jordan Kessler</p>
+                <p class="t-role">Founder &amp; Agency Owner</p>
+                <p class="t-company">Kessler Digital</p>
+              </div>
+              <div class="t-badge" aria-label="White Label Partnership">White Label</div>
+            </div>
+          </article>
+
+          <!-- Testimonial 4 -->
+          <article class="t-card" role="listitem" aria-labelledby="t4-name">
+            <div class="t-card-top">
+              <div class="t-stars" aria-label="5 out of 5 stars">
+                <svg viewBox="0 0 60 12" fill="none" aria-hidden="true"><path d="M5 1l1.2 2.5 2.8.4-2 1.9.5 2.7L5 7.3 2.5 8.5 3 5.8 1 3.9l2.8-.4L5 1z" fill="currentColor"/><path d="M17 1l1.2 2.5 2.8.4-2 1.9.5 2.7-2.5-1.2-2.5 1.2.5-2.7-2-1.9 2.8-.4L17 1z" fill="currentColor"/><path d="M29 1l1.2 2.5 2.8.4-2 1.9.5 2.7L29 7.3l-2.5 1.2.5-2.7-2-1.9 2.8-.4L29 1z" fill="currentColor"/><path d="M41 1l1.2 2.5 2.8.4-2 1.9.5 2.7L41 7.3l-2.5 1.2.5-2.7-2-1.9 2.8-.4L41 1z" fill="currentColor"/><path d="M53 1l1.2 2.5 2.8.4-2 1.9.5 2.7L53 7.3l-2.5 1.2.5-2.7-2-1.9 2.8-.4L53 1z" fill="currentColor"/></svg>
+              </div>
+              <div class="t-quote-mark" aria-hidden="true">"</div>
+            </div>
+            <blockquote class="t-text">
+              Our AI customer support agent was hallucinating and giving wrong answers about 20% of the time. Tensra rebuilt the retrieval layer, added guardrails, and implemented proper evaluation metrics we could actually monitor. Hallucination rate dropped to under 2%. More importantly, we now have dashboards showing us exactly what the agent is doing and when it's uncertain.
+            </blockquote>
+            <div class="t-author">
+              <div class="t-avatar" aria-hidden="true">
+                <span class="t-initials">AT</span>
+              </div>
+              <div class="t-author-info">
+                <p class="t-name" id="t4-name">Amara Thornton</p>
+                <p class="t-role">Technical Founder</p>
+                <p class="t-company">Supportly AI</p>
+              </div>
+              <div class="t-badge" aria-label="AI Agent Fix">Agent Fix</div>
+            </div>
+          </article>
+
+          <!-- Testimonial 5 -->
+          <article class="t-card" role="listitem" aria-labelledby="t5-name">
+            <div class="t-card-top">
+              <div class="t-stars" aria-label="5 out of 5 stars">
+                <svg viewBox="0 0 60 12" fill="none" aria-hidden="true"><path d="M5 1l1.2 2.5 2.8.4-2 1.9.5 2.7L5 7.3 2.5 8.5 3 5.8 1 3.9l2.8-.4L5 1z" fill="currentColor"/><path d="M17 1l1.2 2.5 2.8.4-2 1.9.5 2.7-2.5-1.2-2.5 1.2.5-2.7-2-1.9 2.8-.4L17 1z" fill="currentColor"/><path d="M29 1l1.2 2.5 2.8.4-2 1.9.5 2.7L29 7.3l-2.5 1.2.5-2.7-2-1.9 2.8-.4L29 1z" fill="currentColor"/><path d="M41 1l1.2 2.5 2.8.4-2 1.9.5 2.7L41 7.3l-2.5 1.2.5-2.7-2-1.9 2.8-.4L41 1z" fill="currentColor"/><path d="M53 1l1.2 2.5 2.8.4-2 1.9.5 2.7L53 7.3l-2.5 1.2.5-2.7-2-1.9 2.8-.4L53 1z" fill="currentColor"/></svg>
+              </div>
+              <div class="t-quote-mark" aria-hidden="true">"</div>
+            </div>
+            <blockquote class="t-text">
+              Before our Series A we needed an external technical review of our AI pipeline. Tensra delivered a Risk Scorecard and Architecture Review that our investors actually read cover to cover. They found two security vulnerabilities we hadn't caught internally. Having that audit report in our data room gave investors confidence that we were serious about infrastructure quality.
+            </blockquote>
+            <div class="t-author">
+              <div class="t-avatar" aria-hidden="true">
+                <span class="t-initials">DV</span>
+              </div>
+              <div class="t-author-info">
+                <p class="t-name" id="t5-name">Daniel Vance</p>
+                <p class="t-role">CEO &amp; Technical Founder</p>
+                <p class="t-company">Cortex Data Labs</p>
+              </div>
+              <div class="t-badge" aria-label="Pre-fundraise Audit">Pre-Raise</div>
+            </div>
+          </article>
+
+          <!-- Testimonial 6 -->
+          <article class="t-card" role="listitem" aria-labelledby="t6-name">
+            <div class="t-card-top">
+              <div class="t-stars" aria-label="5 out of 5 stars">
+                <svg viewBox="0 0 60 12" fill="none" aria-hidden="true"><path d="M5 1l1.2 2.5 2.8.4-2 1.9.5 2.7L5 7.3 2.5 8.5 3 5.8 1 3.9l2.8-.4L5 1z" fill="currentColor"/><path d="M17 1l1.2 2.5 2.8.4-2 1.9.5 2.7-2.5-1.2-2.5 1.2.5-2.7-2-1.9 2.8-.4L17 1z" fill="currentColor"/><path d="M29 1l1.2 2.5 2.8.4-2 1.9.5 2.7L29 7.3l-2.5 1.2.5-2.7-2-1.9 2.8-.4L29 1z" fill="currentColor"/><path d="M41 1l1.2 2.5 2.8.4-2 1.9.5 2.7L41 7.3l-2.5 1.2.5-2.7-2-1.9 2.8-.4L41 1z" fill="currentColor"/><path d="M53 1l1.2 2.5 2.8.4-2 1.9.5 2.7L53 7.3l-2.5 1.2.5-2.7-2-1.9 2.8-.4L53 1z" fill="currentColor"/></svg>
+              </div>
+              <div class="t-quote-mark" aria-hidden="true">"</div>
+            </div>
+            <blockquote class="t-text">
+              We run a logistics platform with 200+ concurrent users hitting our AI routing engine during peak hours. Tensra designed the infrastructure from scratch — vector database, caching layer, async task queues, the works. Deployment was smooth, rollback was documented, and monitoring was live from day one. We've had zero downtime since go-live four months ago.
+            </blockquote>
+            <div class="t-author">
+              <div class="t-avatar" aria-hidden="true">
+                <span class="t-initials">PN</span>
+              </div>
+              <div class="t-author-info">
+                <p class="t-name" id="t6-name">Priya Nair</p>
+                <p class="t-role">VP of Engineering</p>
+                <p class="t-company">FlowRoute Systems</p>
+              </div>
+              <div class="t-badge" aria-label="AI Infrastructure">Infrastructure</div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Mobile carousel controls -->
+        <div class="t-carousel-controls" aria-label="Testimonial navigation">
+          <button class="t-carousel-btn" id="t-prev" aria-label="Previous testimonial">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="t-carousel-dots" id="t-dots" role="tablist" aria-label="Testimonial page indicators"></div>
+          <button class="t-carousel-btn" id="t-next" aria-label="Next testimonial">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+
+        <!-- CTA Banner -->
+        <div class="t-cta-banner">
+          <div class="t-cta-glow" aria-hidden="true"></div>
+          <div class="t-cta-content">
+            <h3 class="t-cta-heading">Ready to Build AI That Works in Production?</h3>
+            <p class="t-cta-text">Whether you need an AI audit, a secure RAG system, or a production-grade AI agent, Tensra AI Engineering can help.</p>
+            <div class="t-cta-actions">
+              <a href="#contact" class="btn btn-primary btn-lg">
+                Book Discovery Call
+                <svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a href="#services" class="btn btn-ghost btn-lg">View Services</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT SECTION
+    ============================================================ -->
+    <section class="contact section" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-grid">
+
+          <div class="contact-info">
+            <div class="section-eyebrow">Get In Touch</div>
+            <h2 class="section-heading" id="contact-heading">Schedule a Discovery Call</h2>
+            <p class="contact-lead">
+              Tell us about your AI system or project. We'll review your situation and come prepared with specific observations and next steps — no generic sales pitch.
+            </p>
+
+            <div class="contact-details">
+              <a href="mailto:tensraai@gmail.com" class="contact-detail-item">
+                <div class="contact-detail-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#00D4FF" stroke-width="1.5"/>
+                    <path d="M22 6l-10 7L2 6" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="contact-detail-label">Email</p>
+                  <p class="contact-detail-value">tensraai@gmail.com</p>
+                </div>
+              </a>
+
+              <a href="https://www.linkedin.com/company/tensra-ai-engineering" class="contact-detail-item" target="_blank" rel="noopener noreferrer">
+                <div class="contact-detail-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <rect x="2" y="2" width="20" height="20" rx="3" stroke="#00D4FF" stroke-width="1.5"/>
+                    <path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 10v7" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="contact-detail-label">LinkedIn</p>
+                  <p class="contact-detail-value">Tensra AI Engineering</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="contact-guarantee">
+              <div class="guarantee-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#00D4FF" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <p>We respond within 24 hours. No offshore call centers, no junior account managers — you'll speak directly with the engineers who'll work on your project.</p>
+            </div>
+          </div>
+
+          <div class="contact-form-wrapper">
+            <form class="contact-form" id="contact-form" novalidate aria-label="Contact form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="name">Name <span class="required" aria-label="required">*</span></label>
+                  <input class="form-input" type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="company">Company</label>
+                  <input class="form-input" type="text" id="company" name="company" placeholder="Company or agency" autocomplete="organization" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="email">Email <span class="required" aria-label="required">*</span></label>
+                <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="project-type">Project Type</label>
+                  <select class="form-select" id="project-type" name="project-type">
+                    <option value="" disabled selected>Select project type</option>
+                    <option value="audit">AI System Audit</option>
+                    <option value="rag">Private RAG Knowledge Base</option>
+                    <option value="agent">AI Agent Build / Fix</option>
+                    <option value="retainer">Ongoing Retainer Support</option>
+                    <option value="white-label">Agency / White Label</option>
+                    <option value="other">Other / Not Sure Yet</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="budget">Budget Range</label>
+                  <select class="form-select" id="budget" name="budget">
+                    <option value="" disabled selected>Select budget range</option>
+                    <option value="3-5k">$3,000 – $5,000</option>
+                    <option value="5-10k">$5,000 – $10,000</option>
+                    <option value="10-20k">$10,000 – $20,000</option>
+                    <option value="20k+">$20,000+</option>
+                    <option value="retainer">Monthly Retainer</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="message">Message <span class="required" aria-label="required">*</span></label>
+                <textarea class="form-textarea" id="message" name="message" rows="5" placeholder="Describe your AI system or project. What's working? What isn't? What do you need?" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full btn-lg" id="submit-btn">
+                <span class="btn-text">Send Message</span>
+                <svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+
+              <p class="form-privacy">We don't share your information with third parties.</p>
+            </form>
+
+            <!-- Success message (hidden by default) -->
+            <div class="form-success" id="form-success" role="alert" aria-live="polite" hidden>
+              <div class="form-success-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M22 4L12 14.01l-3-3" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>Message received</h3>
+              <p>We'll review your project details and respond within 24 hours.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo footer-logo" aria-label="Tensra AI Engineering">
+            <img src="logo.png" alt="Tensra AI Engineering" class="logo-img logo-img--footer" />
+          </a>
+          <p class="footer-tagline">Production-Ready AI Systems.<br />Built for Real Workloads.</p>
+          <a href="mailto:tensraai@gmail.com" class="footer-email">tensraai@gmail.com</a>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <div class="footer-nav-col">
+            <p class="footer-nav-heading">Services</p>
+            <ul role="list">
+              <li><a href="#services" class="footer-link">AI System Audit</a></li>
+              <li><a href="#services" class="footer-link">Private RAG System</a></li>
+              <li><a href="#services" class="footer-link">AI Agent Build / Fix</a></li>
+              <li><a href="#retainer" class="footer-link">Retainer Support</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-col">
+            <p class="footer-nav-heading">Company</p>
+            <ul role="list">
+              <li><a href="#about" class="footer-link">About</a></li>
+              <li><a href="#process" class="footer-link">Process</a></li>
+              <li><a href="#white-label" class="footer-link">For Agencies</a></li>
+              <li><a href="#founders" class="footer-link">Leadership</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-col">
+            <p class="footer-nav-heading">Connect</p>
+            <ul role="list">
+              <li><a href="https://www.linkedin.com/company/tensra-ai-engineering" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a href="mailto:tensraai@gmail.com" class="footer-link">Email</a></li>
+              <li><a href="#contact" class="footer-link">Book a Call</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2025 Tensra AI Engineering. All rights reserved.</p>
+        <p class="footer-copy footer-sub">AI Infrastructure · RAG Systems · Agent Architecture · Enterprise Deployment</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
