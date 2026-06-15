@@ -1,5 +1,5 @@
 /**
- * Tensra AI Engineering — Main Script
+ * Tensra AI — Main Script
  * Handles: navigation, scroll effects, reveal animations, form submission
  */
 
