@@ -388,7 +388,6 @@ function init() {
   createRevealObserver();
   initCounters();
   initScrollSpy();
-  initTestimonials();
 
   // Only enable tilt on non-touch devices
   if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
