@@ -30,7 +30,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet" />
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
@@ -70,63 +70,83 @@
          HERO SECTION
     ============================================================ -->
     <section class="hero" id="hero" aria-label="Hero">
-      <div class="hero-grid-bg" aria-hidden="true"></div>
-      <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
-      <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
+      <!-- Background: top-right radial glow -->
+      <div class="hero-bg-glow" aria-hidden="true"></div>
 
       <div class="container hero-container">
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          <span>AI Infrastructure · Agent Systems · Enterprise Deployment</span>
-        </div>
 
-        <h1 class="hero-headline">
-          Build AI Systems That<br />
-          <span class="headline-accent">Survive Production</span>
-        </h1>
+        <!-- LEFT COLUMN -->
+        <div class="hero-left">
+          <!-- Eyebrow -->
+          <p class="hero-eyebrow" aria-label="Services overview">
+            AI INFRASTRUCTURE · AGENT SYSTEMS · ENTERPRISE DEPLOYMENT
+          </p>
 
-        <p class="hero-subheadline">
-          We design, audit, and deploy secure AI systems that handle real users,<br class="hide-mobile" />
-          real data, and real workloads.
-        </p>
+          <!-- Headline -->
+          <h1 class="hero-headline">
+            Build AI Systems That
+            <span class="headline-accent">Survive Production</span>
+          </h1>
 
-        <div class="hero-cta-group">
-          <a href="#contact" class="btn btn-primary btn-lg">
-            Book Discovery Call
-            <svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-          <a href="#services" class="btn btn-ghost btn-lg">View Services</a>
-        </div>
+          <!-- Subheadline -->
+          <p class="hero-subheadline">
+            We design, audit, and deploy secure AI systems that handle real users, real data, and real workloads.
+          </p>
 
-        <!-- Proof Metrics -->
-        <div class="hero-metrics" role="list" aria-label="Proof metrics">
-          <div class="metric-card" role="listitem">
-            <span class="metric-value">162/162</span>
-            <span class="metric-label">Tests Passing</span>
-          </div>
-          <div class="metric-card" role="listitem">
-            <span class="metric-value">90.9</span>
-            <span class="metric-label">Requests/Second</span>
-          </div>
-          <div class="metric-card" role="listitem">
-            <span class="metric-value">200</span>
-            <span class="metric-label">Concurrent Users</span>
-          </div>
-          <div class="metric-card" role="listitem">
-            <span class="metric-value">0</span>
-            <span class="metric-label">Failures Under Load</span>
+          <!-- CTA Buttons -->
+          <div class="hero-cta-group">
+            <a href="#contact" class="btn btn-primary btn-lg">
+              Book Discovery Call
+              <svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="#services" class="btn btn-ghost btn-lg">View Services</a>
           </div>
         </div>
 
-        <!-- Security Stack Tags -->
-        <div class="hero-tags" aria-label="Security technologies">
-          <span class="tag tag-security">AES-256-GCM Encryption</span>
-          <span class="tag tag-security">HMAC-SHA256 Audit Chains</span>
-          <span class="tag tag-security">JWT + Row Level Security</span>
-          <span class="tag tag-security">Air-Gapped Docker Deployments</span>
+        <!-- RIGHT COLUMN: Terminal mockup -->
+        <div class="hero-right" aria-hidden="true">
+          <!-- Faint grid behind the terminal -->
+          <div class="hero-right-grid"></div>
+
+          <div class="terminal-window" role="img" aria-label="Production system status terminal">
+            <!-- Window chrome -->
+            <div class="terminal-titlebar">
+              <span class="terminal-dot terminal-dot--red"></span>
+              <span class="terminal-dot terminal-dot--yellow"></span>
+              <span class="terminal-dot terminal-dot--green"></span>
+              <span class="terminal-title">tensra — eval</span>
+            </div>
+
+            <!-- Terminal body -->
+            <div class="terminal-body">
+              <div class="terminal-line terminal-line--1">
+                <span class="term-prompt">&gt;</span>
+                <span class="term-cmd"> running eval suite...</span>
+              </div>
+              <div class="terminal-line terminal-line--2">
+                <span class="term-check">✓</span>
+                <span class="term-pass"> 162/162 passed</span>
+              </div>
+              <div class="terminal-line terminal-line--3 term-spacer">
+                <span class="term-prompt">&gt;</span>
+                <span class="term-cmd"> load test: 200 concurrent users</span>
+              </div>
+              <div class="terminal-line terminal-line--4">
+                <span class="term-check">✓</span>
+                <span class="term-pass"> 0 failures</span>
+                <span class="term-dim"> · p95 142ms</span>
+              </div>
+              <div class="terminal-line terminal-line--5 term-spacer">
+                <span class="term-prompt">&gt;</span>
+                <span class="term-cmd"> status: </span><span class="term-ready">production ready</span>
+              </div>
+              <div class="terminal-cursor" aria-hidden="true"></div>
+            </div>
+          </div>
         </div>
+
       </div>
 
       <!-- Scroll indicator -->
@@ -170,18 +190,21 @@
       <div class="container">
         <div class="about-grid">
           <div class="about-content">
-            <div class="section-eyebrow">About Tensra</div>
+            <div class="section-eyebrow">ABOUT TENSRA</div>
             <h2 class="section-heading" id="about-heading">
-              We Build AI Systems That<br />Keep Working
+              Two engineers. No fluff.
             </h2>
             <p class="about-lead">
-              Tensra AI builds production-ready AI systems for companies and agencies that need reliability over novelty.
+              Tensra is two engineers — Noman and Anas.
             </p>
             <p class="about-body">
-              Most AI demos work in controlled conditions. Our systems are designed for the conditions after launch — when traffic increases, employees leave, edge cases surface, and real-world complexity appears.
+              We started it because we kept watching companies pay for AI projects that demoed beautifully and then quietly died in production.
             </p>
             <p class="about-body">
-              We specialize in the infrastructure and engineering work that turns AI prototypes into durable systems: secure data pipelines, auditable agent architectures, observable deployments, and systems that fail gracefully when they need to.
+              We do the unglamorous parts: load testing, evals, monitoring, and the failure modes nobody screenshots.
+            </p>
+            <p class="about-body">
+              If you want a flashy demo, we're probably not your team. If you want something that still works at 2am under real traffic, we are.
             </p>
             <a href="#contact" class="btn btn-primary">Start a Conversation</a>
           </div>
@@ -190,7 +213,7 @@
             <div class="pillar-card">
               <div class="pillar-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
               <h3 class="pillar-title">AI Infrastructure</h3>
@@ -200,8 +223,8 @@
             <div class="pillar-card">
               <div class="pillar-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
-                  <rect x="3" y="11" width="18" height="11" rx="2" stroke="#00D4FF" stroke-width="1.5"/>
-                  <path d="M7 11V7a5 5 0 0110 0v4" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
+                  <rect x="3" y="11" width="18" height="11" rx="2" stroke="#1AC5FF" stroke-width="1.5"/>
+                  <path d="M7 11V7a5 5 0 0110 0v4" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
               </div>
               <h3 class="pillar-title">Security Engineering</h3>
@@ -211,8 +234,8 @@
             <div class="pillar-card">
               <div class="pillar-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="12" r="3" stroke="#00D4FF" stroke-width="1.5"/>
-                  <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
+                  <circle cx="12" cy="12" r="3" stroke="#1AC5FF" stroke-width="1.5"/>
+                  <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
               </div>
               <h3 class="pillar-title">Agent Architecture</h3>
@@ -222,8 +245,8 @@
             <div class="pillar-card">
               <div class="pillar-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M3 3v18h18" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
-                  <path d="M7 16l4-4 4 4 4-8" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M3 3v18h18" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M7 16l4-4 4 4 4-8" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
               <h3 class="pillar-title">Observability</h3>
@@ -233,7 +256,7 @@
             <div class="pillar-card">
               <div class="pillar-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
               <h3 class="pillar-title">Performance Engineering</h3>
@@ -243,8 +266,8 @@
             <div class="pillar-card">
               <div class="pillar-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
-                  <rect x="2" y="3" width="20" height="14" rx="2" stroke="#00D4FF" stroke-width="1.5"/>
-                  <path d="M8 21h8M12 17v4" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
+                  <rect x="2" y="3" width="20" height="14" rx="2" stroke="#1AC5FF" stroke-width="1.5"/>
+                  <path d="M8 21h8M12 17v4" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
               </div>
               <h3 class="pillar-title">Enterprise Deployment</h3>
@@ -261,162 +284,89 @@
     <section class="services section" id="services" aria-labelledby="services-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-eyebrow">Services</div>
+          <div class="section-eyebrow">WHAT WE BUILD</div>
           <h2 class="section-heading" id="services-heading">What We Build</h2>
-          <p class="section-subheading">Fixed-scope engagements with defined deliverables, timelines, and outcomes.</p>
+          <p class="section-subheading">AI systems built around real business problems — not demos.</p>
         </div>
 
         <div class="services-grid">
 
-          <!-- Service 1: Audit -->
-          <article class="service-card service-card--featured" aria-labelledby="service-audit-heading">
+          <!-- Card 1: Internal Knowledge AI -->
+          <article class="service-card" aria-labelledby="service-knowledge-heading">
             <div class="service-card-header">
-              <div class="service-badge">Most Popular</div>
               <div class="service-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M9 12l2 2 4-4" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#00D4FF" stroke-width="1.5"/>
+                  <path d="M4 19.5A2.5 2.5 0 016.5 17H20" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" stroke="#1AC5FF" stroke-width="1.5"/>
+                  <path d="M9 7h6M9 11h6M9 15h3" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
               </div>
             </div>
 
             <div class="service-card-body">
-              <h3 class="service-title" id="service-audit-heading">AI System Audit</h3>
-              <div class="service-meta">
-                <span class="service-price">Contact for Quotation</span>
-                <span class="service-timeline">1–2 Weeks</span>
-              </div>
-              <p class="service-desc">
-                A comprehensive technical review of your existing AI system. We identify security vulnerabilities, architectural fragility, and performance bottlenecks — then give you a clear roadmap to fix them.
-              </p>
-
-              <div class="service-deliverables">
-                <p class="deliverables-label">Deliverables</p>
-                <ul class="deliverables-list" role="list">
-                  <li>AI Risk Scorecard</li>
-                  <li>Security Vulnerability Report</li>
-                  <li>Architecture Review</li>
-                  <li>Fragility Analysis</li>
-                  <li>30-Day Fix Roadmap</li>
-                  <li>Executive Summary</li>
-                </ul>
-              </div>
-
-              <div class="service-targets">
-                <p class="targets-label">Ideal For</p>
-                <div class="target-tags">
-                  <span class="target-tag">Startups</span>
-                  <span class="target-tag">CTOs</span>
-                  <span class="target-tag">Agencies</span>
-                  <span class="target-tag">Pre-Fundraise</span>
-                </div>
-              </div>
+              <h3 class="service-title" id="service-knowledge-heading">Internal Knowledge AI</h3>
+              <p class="service-tagline">Your team asks questions. Your documents answer.</p>
+              <ul class="service-bullets" role="list">
+                <li>Private RAG over your own internal documents</li>
+                <li>Air-gapped — nothing leaves your servers</li>
+                <li>Multi-user with permission-aware access</li>
+              </ul>
             </div>
 
             <div class="service-card-footer">
-              <a href="#contact" class="btn btn-primary btn-full">Request Audit</a>
+              <a href="#contact" class="btn btn-primary btn-full">Contact for details</a>
             </div>
           </article>
 
-          <!-- Service 2: RAG -->
-          <article class="service-card" aria-labelledby="service-rag-heading">
+          <!-- Card 2: AI Customer Support Agent -->
+          <article class="service-card" aria-labelledby="service-support-heading">
             <div class="service-card-header">
               <div class="service-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M4 19.5A2.5 2.5 0 016.5 17H20" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
-                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" stroke="#00D4FF" stroke-width="1.5"/>
-                  <path d="M9 7h6M9 11h6M9 15h3" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M8 10h8M8 14h5" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
               </div>
             </div>
 
             <div class="service-card-body">
-              <h3 class="service-title" id="service-rag-heading">Private RAG Knowledge Base</h3>
-              <div class="service-meta">
-                <span class="service-price">Contact for Quotation</span>
-                <span class="service-timeline">3–5 Weeks</span>
-              </div>
-              <p class="service-desc">
-                A secure, private AI knowledge system built on your internal documents. Employees get accurate, sourced answers. Your data never leaves your infrastructure.
-              </p>
-
-              <div class="service-deliverables">
-                <p class="deliverables-label">Features</p>
-                <ul class="deliverables-list" role="list">
-                  <li>AI-powered document search</li>
-                  <li>Permission-aware retrieval</li>
-                  <li>Source citations</li>
-                  <li>Google Drive · Notion · Confluence</li>
-                  <li>Secure Docker deployment</li>
-                </ul>
-              </div>
-
-              <div class="service-stack">
-                <p class="stack-label">Tech Stack</p>
-                <div class="stack-tags">
-                  <span class="stack-tag">LangChain</span>
-                  <span class="stack-tag">FastAPI</span>
-                  <span class="stack-tag">ChromaDB</span>
-                  <span class="stack-tag">PGVector</span>
-                  <span class="stack-tag">Supabase</span>
-                  <span class="stack-tag">Docker</span>
-                </div>
-              </div>
+              <h3 class="service-title" id="service-support-heading">AI Customer Support Agent</h3>
+              <p class="service-tagline">Answers customers 24/7, trained on your own docs.</p>
+              <ul class="service-bullets" role="list">
+                <li>Trained on your product docs, FAQs, and policies</li>
+                <li>Hands off to a human the moment it's needed</li>
+                <li>Plugs into WhatsApp, your website, or live chat</li>
+              </ul>
             </div>
 
             <div class="service-card-footer">
-              <a href="#contact" class="btn btn-secondary btn-full">Build Knowledge Base</a>
+              <a href="#contact" class="btn btn-primary btn-full">Contact for details</a>
             </div>
           </article>
 
-          <!-- Service 3: Agent -->
-          <article class="service-card" aria-labelledby="service-agent-heading">
+          <!-- Card 3: Document Intelligence System -->
+          <article class="service-card" aria-labelledby="service-docs-heading">
             <div class="service-card-header">
               <div class="service-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="8" r="4" stroke="#00D4FF" stroke-width="1.5"/>
-                  <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
-                  <path d="M19 3l2 2-8 8-3-3 8-8z" stroke="#00D4FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
               </div>
             </div>
 
             <div class="service-card-body">
-              <h3 class="service-title" id="service-agent-heading">AI Agent Build / Fix</h3>
-              <div class="service-meta">
-                <span class="service-price">Contact for Quotation</span>
-                <span class="service-timeline">3–6 Weeks</span>
-              </div>
-              <p class="service-desc">
-                Custom AI agents built for real business operations — with tool calling, CRM integrations, memory systems, human approval workflows, and load-tested guardrails.
-              </p>
-
-              <div class="service-deliverables">
-                <p class="deliverables-label">Capabilities</p>
-                <ul class="deliverables-list" role="list">
-                  <li>Multi-agent systems</li>
-                  <li>Tool calling · CRM · API integrations</li>
-                  <li>Memory systems · Human approvals</li>
-                  <li>Guardrails · Monitoring</li>
-                  <li>Load testing included</li>
-                </ul>
-              </div>
-
-              <div class="service-examples">
-                <p class="examples-label">Example Agents</p>
-                <div class="example-tags">
-                  <span class="example-tag">Lead Qualification</span>
-                  <span class="example-tag">Customer Support</span>
-                  <span class="example-tag">Research</span>
-                  <span class="example-tag">Content Generation</span>
-                  <span class="example-tag">Data Analysis</span>
-                  <span class="example-tag">Workflow Automation</span>
-                </div>
-              </div>
+              <h3 class="service-title" id="service-docs-heading">Document Intelligence System</h3>
+              <p class="service-tagline">Find anything in your files in seconds.</p>
+              <ul class="service-bullets" role="list">
+                <li>Built for law firms, insurance, real estate, and healthcare</li>
+                <li>Searches contracts, case files, and policy docs instantly</li>
+                <li>Private deployment with a full HMAC audit trail</li>
+              </ul>
             </div>
 
             <div class="service-card-footer">
-              <a href="#contact" class="btn btn-secondary btn-full">Build AI Agent</a>
+              <a href="#contact" class="btn btn-primary btn-full">Contact for details</a>
             </div>
           </article>
 
@@ -430,7 +380,7 @@
     <section class="process section" id="process" aria-labelledby="process-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-eyebrow">Our Process</div>
+          <div class="section-eyebrow">HOW WE WORK</div>
           <h2 class="section-heading" id="process-heading">How We Work</h2>
           <p class="section-subheading">A structured engagement model that keeps projects on track and stakeholders informed.</p>
         </div>
@@ -533,7 +483,7 @@
       <div class="container">
         <div class="wl-grid">
           <div class="wl-content">
-            <div class="section-eyebrow">For Agencies</div>
+            <div class="section-eyebrow">FOR AGENCIES</div>
             <h2 class="section-heading" id="wl-heading">Your AI Delivery Partner</h2>
             <p class="wl-lead">
               You sell the project. We build it. Your client never sees us.
@@ -566,7 +516,7 @@
             <div class="wl-benefit-card">
               <div class="wl-benefit-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
               <div>
@@ -578,8 +528,8 @@
             <div class="wl-benefit-card">
               <div class="wl-benefit-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="12" r="10" stroke="#00D4FF" stroke-width="1.5"/>
-                  <path d="M12 8v4l3 3" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
+                  <circle cx="12" cy="12" r="10" stroke="#1AC5FF" stroke-width="1.5"/>
+                  <path d="M12 8v4l3 3" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
               </div>
               <div>
@@ -591,7 +541,7 @@
             <div class="wl-benefit-card">
               <div class="wl-benefit-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
               </div>
               <div>
@@ -603,10 +553,10 @@
             <div class="wl-benefit-card">
               <div class="wl-benefit-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
-                  <rect x="3" y="3" width="7" height="7" rx="1" stroke="#00D4FF" stroke-width="1.5"/>
-                  <rect x="14" y="3" width="7" height="7" rx="1" stroke="#00D4FF" stroke-width="1.5"/>
-                  <rect x="3" y="14" width="7" height="7" rx="1" stroke="#00D4FF" stroke-width="1.5"/>
-                  <rect x="14" y="14" width="7" height="7" rx="1" stroke="#00D4FF" stroke-width="1.5"/>
+                  <rect x="3" y="3" width="7" height="7" rx="1" stroke="#1AC5FF" stroke-width="1.5"/>
+                  <rect x="14" y="3" width="7" height="7" rx="1" stroke="#1AC5FF" stroke-width="1.5"/>
+                  <rect x="3" y="14" width="7" height="7" rx="1" stroke="#1AC5FF" stroke-width="1.5"/>
+                  <rect x="14" y="14" width="7" height="7" rx="1" stroke="#1AC5FF" stroke-width="1.5"/>
                 </svg>
               </div>
               <div>
@@ -624,8 +574,8 @@
     ============================================================ -->
     <section class="retainer section" id="retainer" aria-labelledby="retainer-heading">
       <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">Ongoing Support</div>
+        <div class="section-header section-header--center">
+          <div class="section-eyebrow">ONGOING SUPPORT</div>
           <h2 class="section-heading" id="retainer-heading">Ongoing AI Operations Support</h2>
           <p class="section-subheading">AI systems need ongoing maintenance, monitoring, and optimization. Our retainer plans keep your system performing reliably after launch.</p>
         </div>
@@ -643,8 +593,8 @@
             <div class="retainer-feature">
               <div class="retainer-feature-icon" aria-hidden="true">
                 <svg viewBox="0 0 16 16" fill="none">
-                  <circle cx="8" cy="8" r="7" stroke="#00D4FF" stroke-width="1.2"/>
-                  <path d="M5 8l2 2 4-4" stroke="#00D4FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="8" cy="8" r="7" stroke="#1AC5FF" stroke-width="1.2"/>
+                  <path d="M5 8l2 2 4-4" stroke="#1AC5FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
               <div>
@@ -656,8 +606,8 @@
             <div class="retainer-feature">
               <div class="retainer-feature-icon" aria-hidden="true">
                 <svg viewBox="0 0 16 16" fill="none">
-                  <circle cx="8" cy="8" r="7" stroke="#00D4FF" stroke-width="1.2"/>
-                  <path d="M5 8l2 2 4-4" stroke="#00D4FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="8" cy="8" r="7" stroke="#1AC5FF" stroke-width="1.2"/>
+                  <path d="M5 8l2 2 4-4" stroke="#1AC5FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
               <div>
@@ -669,8 +619,8 @@
             <div class="retainer-feature">
               <div class="retainer-feature-icon" aria-hidden="true">
                 <svg viewBox="0 0 16 16" fill="none">
-                  <circle cx="8" cy="8" r="7" stroke="#00D4FF" stroke-width="1.2"/>
-                  <path d="M5 8l2 2 4-4" stroke="#00D4FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="8" cy="8" r="7" stroke="#1AC5FF" stroke-width="1.2"/>
+                  <path d="M5 8l2 2 4-4" stroke="#1AC5FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
               <div>
@@ -682,8 +632,8 @@
             <div class="retainer-feature">
               <div class="retainer-feature-icon" aria-hidden="true">
                 <svg viewBox="0 0 16 16" fill="none">
-                  <circle cx="8" cy="8" r="7" stroke="#00D4FF" stroke-width="1.2"/>
-                  <path d="M5 8l2 2 4-4" stroke="#00D4FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="8" cy="8" r="7" stroke="#1AC5FF" stroke-width="1.2"/>
+                  <path d="M5 8l2 2 4-4" stroke="#1AC5FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
               <div>
@@ -695,8 +645,8 @@
             <div class="retainer-feature">
               <div class="retainer-feature-icon" aria-hidden="true">
                 <svg viewBox="0 0 16 16" fill="none">
-                  <circle cx="8" cy="8" r="7" stroke="#00D4FF" stroke-width="1.2"/>
-                  <path d="M5 8l2 2 4-4" stroke="#00D4FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="8" cy="8" r="7" stroke="#1AC5FF" stroke-width="1.2"/>
+                  <path d="M5 8l2 2 4-4" stroke="#1AC5FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
               <div>
@@ -714,8 +664,8 @@
     ============================================================ -->
     <section class="founders section" id="founders" aria-labelledby="founders-heading">
       <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">Leadership</div>
+        <div class="section-header section-header--center">
+          <div class="section-eyebrow">LEADERSHIP</div>
           <h2 class="section-heading" id="founders-heading">The Team Behind Tensra</h2>
         </div>
 
@@ -777,7 +727,7 @@
         <div class="contact-grid">
 
           <div class="contact-info">
-            <div class="section-eyebrow">Get In Touch</div>
+            <div class="section-eyebrow">GET IN TOUCH</div>
             <h2 class="section-heading" id="contact-heading">Schedule a Discovery Call</h2>
             <p class="contact-lead">
               Tell us about your AI system or project. We'll review your situation and come prepared with specific observations and next steps — no generic sales pitch.
@@ -787,8 +737,8 @@
               <a href="mailto:tensraai@gmail.com" class="contact-detail-item">
                 <div class="contact-detail-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#00D4FF" stroke-width="1.5"/>
-                    <path d="M22 6l-10 7L2 6" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#1AC5FF" stroke-width="1.5"/>
+                    <path d="M22 6l-10 7L2 6" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/>
                   </svg>
                 </div>
                 <div>
@@ -800,8 +750,8 @@
               <a href="https://www.linkedin.com/company/tensra/" class="contact-detail-item" target="_blank" rel="noopener noreferrer">
                 <div class="contact-detail-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none">
-                    <rect x="2" y="2" width="20" height="20" rx="3" stroke="#00D4FF" stroke-width="1.5"/>
-                    <path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 10v7" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/>
+                    <rect x="2" y="2" width="20" height="20" rx="3" stroke="#1AC5FF" stroke-width="1.5"/>
+                    <path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 10v7" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/>
                   </svg>
                 </div>
                 <div>
@@ -814,7 +764,7 @@
             <div class="contact-guarantee">
               <div class="guarantee-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#00D4FF" stroke-width="1.5" stroke-linejoin="round"/>
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#1AC5FF" stroke-width="1.5" stroke-linejoin="round"/>
                 </svg>
               </div>
               <p>We respond within 24 hours. No offshore call centers, no junior account managers — you'll speak directly with the engineers who'll work on your project.</p>
@@ -966,13 +916,13 @@
       <svg viewBox="0 0 24 24" fill="none">
         <path
           d="M22 11.08V12a10 10 0 11-5.93-9.14"
-          stroke="#00D4FF"
+          stroke="#1AC5FF"
           stroke-width="1.5"
           stroke-linecap="round"
         />
         <path
           d="M22 4L12 14.01l-3-3"
-          stroke="#00D4FF"
+          stroke="#1AC5FF"
           stroke-width="1.5"
           stroke-linecap="round"
           stroke-linejoin="round"

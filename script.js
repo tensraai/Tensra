@@ -101,6 +101,7 @@ const REVEAL_SELECTORS = [
   '.contact-info',
   '.contact-form-wrapper',
   '.trust-bar',
+  '.hero-left',
 ];
 
 function addRevealClasses() {
@@ -145,78 +146,6 @@ function createRevealObserver() {
   );
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-}
-
-// ============================================================
-// 4. METRIC COUNTER ANIMATION
-// ============================================================
-
-/**
- * Animate number counters in the hero metrics section
- */
-function animateCounter(el, target, suffix = '', duration = 1500) {
-  const start = performance.now();
-  const isDecimal = String(target).includes('.');
-  const decimals  = isDecimal ? String(target).split('.')[1].length : 0;
-
-  function update(timestamp) {
-    const elapsed  = timestamp - start;
-    const progress = Math.min(elapsed / duration, 1);
-    // Ease out cubic
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const value = eased * target;
-
-    el.textContent = value.toFixed(decimals) + suffix;
-
-    if (progress < 1) {
-      requestAnimationFrame(update);
-    } else {
-      el.textContent = target + suffix;
-    }
-  }
-
-  requestAnimationFrame(update);
-}
-
-function initCounters() {
-  const metricValues = document.querySelectorAll('.metric-value');
-
-  if (!('IntersectionObserver' in window)) return;
-
-  const counterObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-
-        const el   = entry.target;
-        const text = el.textContent.trim();
-
-        // Parse each metric
-        if (text === '162/162') {
-          let count = 0;
-          const total = 162;
-          const step = () => {
-            count = Math.min(count + 3, total);
-            el.textContent = `${count}/${total}`;
-            if (count < total) requestAnimationFrame(step);
-          };
-          requestAnimationFrame(step);
-        } else if (text === '90.9') {
-          animateCounter(el, 90.9, '', 1400);
-        } else if (text === '200') {
-          animateCounter(el, 200, '', 1200);
-        } else if (text === '0') {
-          // already 0, just ensure it shows
-          el.textContent = '0';
-        }
-
-        counterObserver.unobserve(el);
-      });
-    },
-    { threshold: 0.5 }
-  );
-
-  metricValues.forEach(el => counterObserver.observe(el));
 }
 
 // ============================================================
@@ -386,7 +315,6 @@ function initCardTilt() {
 function init() {
   addRevealClasses();
   createRevealObserver();
-  initCounters();
   initScrollSpy();
 
   // Only enable tilt on non-touch devices
