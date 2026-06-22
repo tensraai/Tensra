@@ -91,7 +91,6 @@ const REVEAL_SELECTORS = [
   '.process-step',
   '.wl-benefit-card',
   '.retainer-feature',
-  '.founder-card',
   '.about-content',
   '.about-pillars',
   '.section-header',
@@ -100,7 +99,6 @@ const REVEAL_SELECTORS = [
   '.retainer-card',
   '.contact-info',
   '.contact-form-wrapper',
-  '.trust-bar',
   '.hero-left',
 ];
 
@@ -287,7 +285,7 @@ function initScrollSpy() {
 
 
 function initCardTilt() {
-  const cards = document.querySelectorAll('.service-card, .pillar-card, .founder-card');
+  const cards = document.querySelectorAll('.service-card, .pillar-card');
 
   cards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
