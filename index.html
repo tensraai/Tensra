@@ -4,48 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO -->
   <title>Tensra AI — Production-Ready AI Systems Built for Real Workloads</title>
-  <meta name="description" content="Tensra AI designs, audits, and deploys secure AI systems built for real production environments. Specializing in AI infrastructure, private RAG systems, multi-agent architectures, and enterprise AI deployments." />
-  <meta name="keywords" content="AI engineering company, AI infrastructure, private RAG systems, AI agent development, enterprise AI consulting, AI system audit, production AI systems" />
+  <meta name="description" content="Tensra AI designs, audits, and deploys secure AI systems built for real production environments — AI infrastructure, private RAG, multi-agent architectures, and enterprise deployments." />
+  <meta name="keywords" content="AI engineering company, AI infrastructure, private RAG systems, AI agent development, enterprise AI consulting, production AI systems" />
   <meta name="author" content="Tensra AI" />
   <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Tensra AI — Production-Ready AI Systems" />
-  <meta property="og:description" content="We design, audit, and deploy secure AI systems that handle real users, real data, and real workloads. Built for reliability, security, and scale." />
+  <meta property="og:description" content="We design, audit, and deploy secure AI systems that handle real users, real data, and real workloads." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tensra.ai" />
   <meta property="og:image" content="assets/og-image.png" />
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Tensra AI" />
   <meta name="twitter:description" content="Production-Ready AI Systems. Built for Real Workloads." />
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="apple-touch-icon" href="favicon.png" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;450;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- ============================================================
-       NAVIGATION
-  ============================================================ -->
+  <!-- ===== NAV ===== -->
   <header class="nav-header" id="nav-header">
     <nav class="nav-container">
       <a href="#" class="nav-logo" aria-label="Tensra AI">
         <img src="logo.png" alt="Tensra AI" class="logo-img" />
       </a>
-
       <ul class="nav-links" id="nav-links" role="list">
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#services" class="nav-link">Services</a></li>
@@ -53,10 +43,10 @@
         <li><a href="#white-label" class="nav-link">Agencies</a></li>
         <li><a href="#retainer" class="nav-link">Retainer</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li class="nav-link-cta"><a href="#contact" class="btn btn-primary btn-full">Book Discovery Call</a></li>
       </ul>
-
       <div class="nav-actions">
-        <a href="#contact" class="btn btn-primary btn-sm">Book Discovery Call</a>
+        <a href="#contact" class="btn btn-primary btn-sm nav-cta-desktop">Book Discovery Call</a>
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -66,834 +56,290 @@
 
   <main>
 
-    <!-- ============================================================
-         HERO SECTION
-    ============================================================ -->
+    <!-- ===== HERO ===== -->
     <section class="hero" id="hero" aria-label="Hero">
-      <!-- Background: top-right radial glow -->
-      <div class="hero-bg-glow" aria-hidden="true"></div>
+      <!-- Animated 3D gradient render -->
+      <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-glow-core" aria-hidden="true"></div>
+      <div class="hero-noise" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
 
-      <div class="container hero-container">
+      <div class="container hero-inner">
+        <span class="hero-eyebrow">
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          AI Infrastructure · Agent Systems · Enterprise Deployment
+        </span>
 
-        <!-- LEFT COLUMN -->
-        <div class="hero-left">
-          <!-- Eyebrow -->
-          <p class="hero-eyebrow" aria-label="Services overview">
-            AI INFRASTRUCTURE · AGENT SYSTEMS · ENTERPRISE DEPLOYMENT
-          </p>
+        <h1 class="hero-headline">
+          Build AI systems that<br>
+          <span class="headline-accent">survive production.</span>
+        </h1>
 
-          <!-- Headline -->
-          <h1 class="hero-headline">
-            Build AI Systems That
-            <span class="headline-accent">Survive Production</span>
-          </h1>
+        <p class="hero-subheadline">
+          We design, audit, and deploy secure AI systems that handle real users, real data, and real workloads — long after launch day.
+        </p>
 
-          <!-- Subheadline -->
-          <p class="hero-subheadline">
-            We design, audit, and deploy secure AI systems that handle real users, real data, and real workloads.
-          </p>
-
-          <!-- CTA Buttons -->
-          <div class="hero-cta-group">
-            <a href="#contact" class="btn btn-primary btn-lg">
-              Book Discovery Call
-              <svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-            <a href="#services" class="btn btn-ghost btn-lg">View Services</a>
-          </div>
+        <div class="hero-cta-group">
+          <a href="#contact" class="btn btn-primary btn-lg">
+            Book Discovery Call
+            <svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#services" class="btn btn-ghost btn-lg">Explore Services</a>
         </div>
 
-        <!-- RIGHT COLUMN: Layered panel visual -->
-        <div class="hero-right" aria-hidden="true">
-          <div class="hero-visual">
-            <!-- Radial glow behind the stack -->
-            <div class="hero-visual-glow"></div>
-            <!-- Panel stack: back to front -->
-            <div class="hero-panel hero-panel--4"></div>
-            <div class="hero-panel hero-panel--3"></div>
-            <div class="hero-panel hero-panel--2"></div>
-            <div class="hero-panel hero-panel--1"></div>
-          </div>
-        </div>
-
+        <ul class="hero-trust" role="list">
+          <li><span class="trust-mark" aria-hidden="true"></span> Air-gapped deployments</li>
+          <li><span class="trust-mark" aria-hidden="true"></span> Full audit trails</li>
+          <li><span class="trust-mark" aria-hidden="true"></span> Load-tested at scale</li>
+        </ul>
       </div>
 
-      <!-- Scroll indicator -->
-      <div class="scroll-indicator" aria-hidden="true">
-        <div class="scroll-dot"></div>
+      <div class="hero-scroll" aria-hidden="true"><span></span></div>
+    </section>
+
+    <!-- ===== CAPABILITY STRIP ===== -->
+    <section class="capability-strip" aria-label="Core capabilities">
+      <div class="cap-viewport">
+        <div class="cap-track">
+          <span>Private RAG</span><span class="cap-sep">/</span>
+          <span>Multi-Agent Systems</span><span class="cap-sep">/</span>
+          <span>Security Engineering</span><span class="cap-sep">/</span>
+          <span>Observability</span><span class="cap-sep">/</span>
+          <span>Load Testing</span><span class="cap-sep">/</span>
+          <span>Air-Gapped Deployment</span><span class="cap-sep">/</span>
+          <span>Audit Trails</span><span class="cap-sep">/</span>
+          <span>Private RAG</span><span class="cap-sep">/</span>
+          <span>Multi-Agent Systems</span><span class="cap-sep">/</span>
+          <span>Security Engineering</span><span class="cap-sep">/</span>
+          <span>Observability</span><span class="cap-sep">/</span>
+          <span>Load Testing</span><span class="cap-sep">/</span>
+          <span>Air-Gapped Deployment</span><span class="cap-sep">/</span>
+          <span>Audit Trails</span><span class="cap-sep">/</span>
+        </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         STATS BAND
-    ============================================================ -->
+    <!-- ===== STATS BAND ===== -->
     <section class="stats-band" aria-label="Company positioning">
       <div class="container">
         <div class="stats-grid">
-
-          <div class="stat-block">
-            <span class="stat-value">100%</span>
-            <p class="stat-label">Private by default</p>
-            <p class="stat-caption">Air-gapped deployments — your data never leaves your servers</p>
-          </div>
-
-          <div class="stat-block">
-            <span class="stat-value">24/7</span>
-            <p class="stat-label">Always on</p>
-            <p class="stat-caption">Systems built to run unattended under real traffic</p>
-          </div>
-
-          <div class="stat-block">
-            <span class="stat-value">End-to-end</span>
-            <p class="stat-label">Audited &amp; observable</p>
-            <p class="stat-caption">Logging, tracing, and access control on every layer</p>
-          </div>
-
-          <div class="stat-block">
-            <span class="stat-value">Production</span>
-            <p class="stat-label">Built to last</p>
-            <p class="stat-caption">Load-tested and monitored, not just demoed</p>
-          </div>
-
+          <div class="stat-block"><span class="stat-value">Private</span><p class="stat-label">By default</p><p class="stat-caption">Air-gapped deployments. Your data never leaves your servers.</p></div>
+          <div class="stat-block"><span class="stat-value">24/7</span><p class="stat-label">Always on</p><p class="stat-caption">Built to run unattended under real production traffic.</p></div>
+          <div class="stat-block"><span class="stat-value">Audited</span><p class="stat-label">End to end</p><p class="stat-caption">Logging, tracing, and access control on every layer.</p></div>
+          <div class="stat-block"><span class="stat-value">Tested</span><p class="stat-label">Before launch</p><p class="stat-caption">Load-tested and monitored, not just demoed.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         ABOUT SECTION
-    ============================================================ -->
+    <!-- ===== ABOUT ===== -->
     <section class="about section" id="about" aria-labelledby="about-heading">
       <div class="container">
         <div class="about-grid">
           <div class="about-content">
-            <div class="section-eyebrow">WHO WE ARE</div>
-            <h2 class="section-heading" id="about-heading">
-              Built for production, not demos.
-            </h2>
-            <p class="about-lead">
-              Tensra is an AI engineering studio. We design, build, and deploy systems that handle real users, real data, and real workloads — the kind that have to keep running long after the launch announcement.
-            </p>
-            <p class="about-body">
-              Most AI projects look impressive in a demo and quietly fail in production. We focus on the parts that decide whether a system survives: load testing, evaluation pipelines, monitoring, access control, and graceful failure under pressure.
-            </p>
-            <p class="about-body">
-              From private knowledge systems to customer-facing agents, we ship infrastructure that's secure, auditable, and built to scale.
-            </p>
-            <a href="#contact" class="btn btn-primary">Start a Conversation</a>
+            <div class="section-eyebrow">Who we are</div>
+            <h2 class="section-heading" id="about-heading">Built for production,<br>not demos.</h2>
+            <p class="about-lead">Tensra is an AI engineering studio. We design, build, and deploy systems that handle real users, real data, and real workloads — the kind that keep running long after the launch announcement.</p>
+            <p class="about-body">Most AI projects look impressive in a demo and quietly fail in production. We focus on the parts that decide whether a system survives: load testing, evaluation pipelines, monitoring, access control, and graceful failure under pressure.</p>
+            <p class="about-body">From private knowledge systems to customer-facing agents, we ship infrastructure that's secure, auditable, and built to scale.</p>
+            <a href="#contact" class="btn btn-primary">Start a conversation
+              <svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
           </div>
-
           <div class="about-pillars">
-            <div class="pillar-card">
-              <div class="pillar-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <h3 class="pillar-title">AI Infrastructure</h3>
-              <p class="pillar-desc">Scalable vector databases, embedding pipelines, and retrieval systems built for production data volumes.</p>
-            </div>
-
-            <div class="pillar-card">
-              <div class="pillar-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <rect x="3" y="11" width="18" height="11" rx="2" stroke="#1AC5FF" stroke-width="1.5"/>
-                  <path d="M7 11V7a5 5 0 0110 0v4" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <h3 class="pillar-title">Security Engineering</h3>
-              <p class="pillar-desc">Encryption at rest and in transit, audit logs, access controls, and air-gapped deployment options.</p>
-            </div>
-
-            <div class="pillar-card">
-              <div class="pillar-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="12" r="3" stroke="#1AC5FF" stroke-width="1.5"/>
-                  <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <h3 class="pillar-title">Agent Architecture</h3>
-              <p class="pillar-desc">Multi-agent systems with tool calling, memory, human-in-the-loop workflows, and guardrails.</p>
-            </div>
-
-            <div class="pillar-card">
-              <div class="pillar-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M3 3v18h18" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/>
-                  <path d="M7 16l4-4 4 4 4-8" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <h3 class="pillar-title">Observability</h3>
-              <p class="pillar-desc">Logging, tracing, performance dashboards, and alerting so you know exactly what your AI is doing.</p>
-            </div>
-
-            <div class="pillar-card">
-              <div class="pillar-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <h3 class="pillar-title">Performance Engineering</h3>
-              <p class="pillar-desc">Load testing, bottleneck analysis, and optimization for high-concurrency production environments.</p>
-            </div>
-
-            <div class="pillar-card">
-              <div class="pillar-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <rect x="2" y="3" width="20" height="14" rx="2" stroke="#1AC5FF" stroke-width="1.5"/>
-                  <path d="M8 21h8M12 17v4" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <h3 class="pillar-title">Enterprise Deployment</h3>
-              <p class="pillar-desc">Docker-based deployments, CI/CD pipelines, and infrastructure-as-code for repeatable, auditable releases.</p>
-            </div>
+            <div class="pillar-card"><div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3 class="pillar-title">AI Infrastructure</h3><p class="pillar-desc">Scalable vector databases, embedding pipelines, and retrieval built for production data volumes.</p></div>
+            <div class="pillar-card"><div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" stroke="#1AC5FF" stroke-width="1.5"/><path d="M7 11V7a5 5 0 0110 0v4" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3 class="pillar-title">Security Engineering</h3><p class="pillar-desc">Encryption at rest and in transit, audit logs, access controls, and air-gapped deployment.</p></div>
+            <div class="pillar-card"><div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#1AC5FF" stroke-width="1.5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3 class="pillar-title">Agent Architecture</h3><p class="pillar-desc">Multi-agent systems with tool calling, memory, human-in-the-loop workflows, and guardrails.</p></div>
+            <div class="pillar-card"><div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/><path d="M7 16l4-4 4 4 4-8" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3 class="pillar-title">Observability</h3><p class="pillar-desc">Logging, tracing, dashboards, and alerting so you know exactly what your AI is doing.</p></div>
+            <div class="pillar-card"><div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3 class="pillar-title">Performance Engineering</h3><p class="pillar-desc">Load testing, bottleneck analysis, and optimization for high-concurrency environments.</p></div>
+            <div class="pillar-card"><div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="#1AC5FF" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3 class="pillar-title">Enterprise Deployment</h3><p class="pillar-desc">Docker-based deployments, CI/CD, and infrastructure-as-code for auditable releases.</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         SERVICES SECTION
-    ============================================================ -->
+    <!-- ===== SERVICES ===== -->
     <section class="services section" id="services" aria-labelledby="services-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-eyebrow">WHAT WE BUILD</div>
-          <h2 class="section-heading" id="services-heading">What We Build</h2>
-          <p class="section-subheading">AI systems built around real business problems — not demos.</p>
+          <div class="section-eyebrow">What we build</div>
+          <h2 class="section-heading" id="services-heading">Three systems, built to last.</h2>
+          <p class="section-subheading">AI products built around real business problems — not demos.</p>
         </div>
-
         <div class="services-grid">
-
-          <!-- Card 1: Internal Knowledge AI -->
-          <article class="service-card" aria-labelledby="service-knowledge-heading">
-            <div class="service-card-header">
-              <div class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M4 19.5A2.5 2.5 0 016.5 17H20" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/>
-                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" stroke="#1AC5FF" stroke-width="1.5"/>
-                  <path d="M9 7h6M9 11h6M9 15h3" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/>
-                </svg>
-              </div>
-            </div>
-
+          <article class="service-card">
+            <div class="service-num">01</div>
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 19.5A2.5 2.5 0 016.5 17H20" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" stroke="#1AC5FF" stroke-width="1.5"/><path d="M9 7h6M9 11h6M9 15h3" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/></svg></div>
             <div class="service-card-body">
-              <h3 class="service-title" id="service-knowledge-heading">Internal Knowledge AI</h3>
+              <h3 class="service-title">Internal Knowledge AI</h3>
               <p class="service-tagline">Your team asks questions. Your documents answer.</p>
-              <ul class="service-bullets" role="list">
-                <li>Private RAG over your own internal documents</li>
-                <li>Air-gapped — nothing leaves your servers</li>
-                <li>Multi-user with permission-aware access</li>
-              </ul>
+              <ul class="service-bullets" role="list"><li>Private RAG over your own internal documents</li><li>Air-gapped — nothing leaves your servers</li><li>Multi-user with permission-aware access</li></ul>
             </div>
-
-            <div class="service-card-footer">
-              <a href="#contact" class="btn btn-primary btn-full">Contact for details</a>
-            </div>
+            <a href="#contact" class="btn btn-outline btn-full service-cta">Contact for details</a>
           </article>
-
-          <!-- Card 2: AI Customer Support Agent -->
-          <article class="service-card" aria-labelledby="service-support-heading">
-            <div class="service-card-header">
-              <div class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M8 10h8M8 14h5" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/>
-                </svg>
-              </div>
-            </div>
-
+          <article class="service-card">
+            <div class="service-num">02</div>
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 10h8M8 14h5" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/></svg></div>
             <div class="service-card-body">
-              <h3 class="service-title" id="service-support-heading">AI Customer Support Agent</h3>
+              <h3 class="service-title">AI Customer Support Agent</h3>
               <p class="service-tagline">Answers customers 24/7, trained on your own docs.</p>
-              <ul class="service-bullets" role="list">
-                <li>Trained on your product docs, FAQs, and policies</li>
-                <li>Hands off to a human the moment it's needed</li>
-                <li>Plugs into WhatsApp, your website, or live chat</li>
-              </ul>
+              <ul class="service-bullets" role="list"><li>Trained on your product docs, FAQs, and policies</li><li>Hands off to a human the moment it's needed</li><li>Plugs into WhatsApp, your website, or live chat</li></ul>
             </div>
-
-            <div class="service-card-footer">
-              <a href="#contact" class="btn btn-primary btn-full">Contact for details</a>
-            </div>
+            <a href="#contact" class="btn btn-outline btn-full service-cta">Contact for details</a>
           </article>
-
-          <!-- Card 3: Document Intelligence System -->
-          <article class="service-card" aria-labelledby="service-docs-heading">
-            <div class="service-card-header">
-              <div class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/>
-                </svg>
-              </div>
-            </div>
-
+          <article class="service-card">
+            <div class="service-num">03</div>
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/></svg></div>
             <div class="service-card-body">
-              <h3 class="service-title" id="service-docs-heading">Document Intelligence System</h3>
+              <h3 class="service-title">Document Intelligence System</h3>
               <p class="service-tagline">Find anything in your files in seconds.</p>
-              <ul class="service-bullets" role="list">
-                <li>Built for law firms, insurance, real estate, and healthcare</li>
-                <li>Searches contracts, case files, and policy docs instantly</li>
-                <li>Private deployment with a full HMAC audit trail</li>
-              </ul>
+              <ul class="service-bullets" role="list"><li>Built for law firms, insurance, real estate, and healthcare</li><li>Searches contracts, case files, and policy docs instantly</li><li>Private deployment with a full HMAC audit trail</li></ul>
             </div>
-
-            <div class="service-card-footer">
-              <a href="#contact" class="btn btn-primary btn-full">Contact for details</a>
-            </div>
+            <a href="#contact" class="btn btn-outline btn-full service-cta">Contact for details</a>
           </article>
-
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         PROCESS SECTION
-    ============================================================ -->
+    <!-- ===== PROCESS ===== -->
     <section class="process section" id="process" aria-labelledby="process-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-eyebrow">HOW WE WORK</div>
-          <h2 class="section-heading" id="process-heading">How We Work</h2>
-          <p class="section-subheading">A structured engagement model that keeps projects on track and stakeholders informed.</p>
+          <div class="section-eyebrow">How we work</div>
+          <h2 class="section-heading" id="process-heading">A process that keeps projects on track.</h2>
+          <p class="section-subheading">A structured engagement model that keeps stakeholders informed at every step.</p>
         </div>
-
         <div class="process-timeline" role="list">
-
-          <div class="process-step" role="listitem">
-            <div class="step-left">
-              <div class="step-number" aria-hidden="true">01</div>
-              <div class="step-connector" aria-hidden="true"></div>
-            </div>
-            <div class="step-content">
-              <h3 class="step-title">Discovery &amp; Scoping</h3>
-              <p class="step-desc">We map your existing systems, understand your data environment, and define clear success criteria before a single line of code is written.</p>
-              <ul class="step-details" role="list">
-                <li>Technical requirements review</li>
-                <li>Stakeholder alignment</li>
-                <li>Risk identification</li>
-                <li>Fixed-scope proposal</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="process-step" role="listitem">
-            <div class="step-left">
-              <div class="step-number" aria-hidden="true">02</div>
-              <div class="step-connector" aria-hidden="true"></div>
-            </div>
-            <div class="step-content">
-              <h3 class="step-title">Architecture Design</h3>
-              <p class="step-desc">System diagrams, data flow documentation, security model, and infrastructure plan reviewed and approved before build begins.</p>
-              <ul class="step-details" role="list">
-                <li>System architecture diagrams</li>
-                <li>Security model definition</li>
-                <li>Infrastructure plan</li>
-                <li>Client sign-off</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="process-step" role="listitem">
-            <div class="step-left">
-              <div class="step-number" aria-hidden="true">03</div>
-              <div class="step-connector" aria-hidden="true"></div>
-            </div>
-            <div class="step-content">
-              <h3 class="step-title">Build &amp; Testing</h3>
-              <p class="step-desc">Iterative development with continuous integration. Every component is load-tested, security-reviewed, and validated against defined acceptance criteria.</p>
-              <ul class="step-details" role="list">
-                <li>Test-driven development</li>
-                <li>Load testing at scale</li>
-                <li>Security validation</li>
-                <li>Weekly progress updates</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="process-step" role="listitem">
-            <div class="step-left">
-              <div class="step-number" aria-hidden="true">04</div>
-              <div class="step-connector" aria-hidden="true"></div>
-            </div>
-            <div class="step-content">
-              <h3 class="step-title">Deployment</h3>
-              <p class="step-desc">Infrastructure-as-code deployment with rollback capability, documentation, and knowledge transfer to your team.</p>
-              <ul class="step-details" role="list">
-                <li>Dockerized deployments</li>
-                <li>CI/CD pipeline setup</li>
-                <li>Full documentation</li>
-                <li>Team knowledge transfer</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="process-step" role="listitem">
-            <div class="step-left">
-              <div class="step-number" aria-hidden="true">05</div>
-              <div class="step-connector" aria-hidden="true"></div>
-            </div>
-            <div class="step-content">
-              <h3 class="step-title">Monitoring &amp; Support</h3>
-              <p class="step-desc">Post-launch monitoring, performance dashboards, and structured support options to keep your system operating reliably.</p>
-              <ul class="step-details" role="list">
-                <li>Observability dashboards</li>
-                <li>Alerting configuration</li>
-                <li>30-day post-launch support</li>
-                <li>Optional retainer plans</li>
-              </ul>
-            </div>
-          </div>
-
+          <div class="process-step" role="listitem"><div class="step-left"><div class="step-number">01</div><div class="step-connector"></div></div><div class="step-content"><h3 class="step-title">Discovery &amp; Scoping</h3><p class="step-desc">We map your existing systems, understand your data environment, and define clear success criteria before a single line of code is written.</p><ul class="step-details" role="list"><li>Technical requirements review</li><li>Stakeholder alignment</li><li>Risk identification</li><li>Fixed-scope proposal</li></ul></div></div>
+          <div class="process-step" role="listitem"><div class="step-left"><div class="step-number">02</div><div class="step-connector"></div></div><div class="step-content"><h3 class="step-title">Architecture Design</h3><p class="step-desc">System diagrams, data flow documentation, security model, and infrastructure plan reviewed and approved before build begins.</p><ul class="step-details" role="list"><li>System architecture diagrams</li><li>Security model definition</li><li>Infrastructure plan</li><li>Client sign-off</li></ul></div></div>
+          <div class="process-step" role="listitem"><div class="step-left"><div class="step-number">03</div><div class="step-connector"></div></div><div class="step-content"><h3 class="step-title">Build &amp; Testing</h3><p class="step-desc">Iterative development with continuous integration. Every component is load-tested, security-reviewed, and validated against defined acceptance criteria.</p><ul class="step-details" role="list"><li>Test-driven development</li><li>Load testing at scale</li><li>Security validation</li><li>Weekly progress updates</li></ul></div></div>
+          <div class="process-step" role="listitem"><div class="step-left"><div class="step-number">04</div><div class="step-connector"></div></div><div class="step-content"><h3 class="step-title">Deployment</h3><p class="step-desc">Infrastructure-as-code deployment with rollback capability, documentation, and knowledge transfer to your team.</p><ul class="step-details" role="list"><li>Dockerized deployments</li><li>CI/CD pipeline setup</li><li>Full documentation</li><li>Team knowledge transfer</li></ul></div></div>
+          <div class="process-step" role="listitem"><div class="step-left"><div class="step-number">05</div></div><div class="step-content"><h3 class="step-title">Monitoring &amp; Support</h3><p class="step-desc">Post-launch monitoring, performance dashboards, and structured support options to keep your system operating reliably.</p><ul class="step-details" role="list"><li>Observability dashboards</li><li>Alerting configuration</li><li>30-day post-launch support</li><li>Optional retainer plans</li></ul></div></div>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         WHITE LABEL SECTION
-    ============================================================ -->
+    <!-- ===== WHITE LABEL ===== -->
     <section class="white-label section" id="white-label" aria-labelledby="wl-heading">
       <div class="container">
         <div class="wl-grid">
           <div class="wl-content">
-            <div class="section-eyebrow">FOR AGENCIES</div>
-            <h2 class="section-heading" id="wl-heading">Your AI Delivery Partner</h2>
-            <p class="wl-lead">
-              You sell the project. We build it. Your client never sees us.
-            </p>
-            <p class="wl-body">
-              If you're an agency that sells digital products, automation, or software — but lacks the AI engineering depth to deliver complex systems — we're your technical partner. We work entirely behind the scenes while you maintain the client relationship and keep your margin.
-            </p>
-
+            <div class="section-eyebrow">For agencies</div>
+            <h2 class="section-heading" id="wl-heading">Your AI delivery partner.</h2>
+            <p class="wl-lead">You sell the project. We build it. Your client never sees us.</p>
+            <p class="wl-body">If you're an agency that sells digital products, automation, or software — but lacks the AI engineering depth to deliver complex systems — we're your technical partner. We work entirely behind the scenes while you keep the client relationship and the margin.</p>
             <div class="wl-flow" aria-label="White label process flow">
-              <div class="wl-step">
-                <span class="wl-step-num">1</span>
-                <span class="wl-step-text">Agency scopes and sells the project</span>
-              </div>
+              <div class="wl-step"><span class="wl-step-num">1</span><span class="wl-step-text">You scope and sell the project</span></div>
               <div class="wl-arrow" aria-hidden="true">→</div>
-              <div class="wl-step">
-                <span class="wl-step-num">2</span>
-                <span class="wl-step-text">Tensra builds and delivers</span>
-              </div>
+              <div class="wl-step"><span class="wl-step-num">2</span><span class="wl-step-text">Tensra builds and delivers</span></div>
               <div class="wl-arrow" aria-hidden="true">→</div>
-              <div class="wl-step">
-                <span class="wl-step-num">3</span>
-                <span class="wl-step-text">Agency presents to client under their brand</span>
-              </div>
+              <div class="wl-step"><span class="wl-step-num">3</span><span class="wl-step-text">You present under your brand</span></div>
             </div>
-
-            <a href="#contact" class="btn btn-primary">Partner With Tensra</a>
+            <a href="#contact" class="btn btn-primary">Partner with Tensra</a>
           </div>
-
           <div class="wl-benefits">
-            <div class="wl-benefit-card">
-              <div class="wl-benefit-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div>
-                <h3 class="wl-benefit-title">Faster Delivery</h3>
-                <p class="wl-benefit-desc">Ship AI projects in weeks, not months. No ramp-up time on AI infrastructure.</p>
-              </div>
-            </div>
-
-            <div class="wl-benefit-card">
-              <div class="wl-benefit-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="12" r="10" stroke="#1AC5FF" stroke-width="1.5"/>
-                  <path d="M12 8v4l3 3" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <div>
-                <h3 class="wl-benefit-title">Deep Technical Expertise</h3>
-                <p class="wl-benefit-desc">Production AI systems require specialized knowledge. We bring it without you needing to hire it.</p>
-              </div>
-            </div>
-
-            <div class="wl-benefit-card">
-              <div class="wl-benefit-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <div>
-                <h3 class="wl-benefit-title">Lower Overhead</h3>
-                <p class="wl-benefit-desc">No full-time AI engineers on payroll. Pay per project and scale up as you win more work.</p>
-              </div>
-            </div>
-
-            <div class="wl-benefit-card">
-              <div class="wl-benefit-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <rect x="3" y="3" width="7" height="7" rx="1" stroke="#1AC5FF" stroke-width="1.5"/>
-                  <rect x="14" y="3" width="7" height="7" rx="1" stroke="#1AC5FF" stroke-width="1.5"/>
-                  <rect x="3" y="14" width="7" height="7" rx="1" stroke="#1AC5FF" stroke-width="1.5"/>
-                  <rect x="14" y="14" width="7" height="7" rx="1" stroke="#1AC5FF" stroke-width="1.5"/>
-                </svg>
-              </div>
-              <div>
-                <h3 class="wl-benefit-title">White-Label Execution</h3>
-                <p class="wl-benefit-desc">All deliverables, documentation, and communication under your brand identity.</p>
-              </div>
-            </div>
+            <div class="wl-benefit-card"><div class="wl-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h3 class="wl-benefit-title">Faster delivery</h3><p class="wl-benefit-desc">Ship AI projects in weeks, not months. No ramp-up on AI infrastructure.</p></div></div>
+            <div class="wl-benefit-card"><div class="wl-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#1AC5FF" stroke-width="1.5"/><path d="M12 8v4l3 3" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/></svg></div><div><h3 class="wl-benefit-title">Deep expertise</h3><p class="wl-benefit-desc">Production AI requires specialized knowledge. We bring it without you hiring it.</p></div></div>
+            <div class="wl-benefit-card"><div class="wl-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/></svg></div><div><h3 class="wl-benefit-title">Lower overhead</h3><p class="wl-benefit-desc">No full-time AI engineers on payroll. Pay per project, scale as you win work.</p></div></div>
+            <div class="wl-benefit-card"><div class="wl-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1" stroke="#1AC5FF" stroke-width="1.5"/><rect x="14" y="3" width="7" height="7" rx="1" stroke="#1AC5FF" stroke-width="1.5"/><rect x="3" y="14" width="7" height="7" rx="1" stroke="#1AC5FF" stroke-width="1.5"/><rect x="14" y="14" width="7" height="7" rx="1" stroke="#1AC5FF" stroke-width="1.5"/></svg></div><div><h3 class="wl-benefit-title">White-label execution</h3><p class="wl-benefit-desc">All deliverables, docs, and communication under your brand identity.</p></div></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         RETAINER SECTION
-    ============================================================ -->
+    <!-- ===== RETAINER ===== -->
     <section class="retainer section" id="retainer" aria-labelledby="retainer-heading">
       <div class="container">
         <div class="section-header section-header--center">
-          <div class="section-eyebrow">ONGOING SUPPORT</div>
-          <h2 class="section-heading" id="retainer-heading">Ongoing AI Operations Support</h2>
-          <p class="section-subheading">AI systems need ongoing maintenance, monitoring, and optimization. Our retainer plans keep your system performing reliably after launch.</p>
+          <div class="section-eyebrow">Ongoing support</div>
+          <h2 class="section-heading" id="retainer-heading">Operations support after launch.</h2>
+          <p class="section-subheading">AI systems need ongoing maintenance, monitoring, and optimization. Our retainer plans keep yours performing reliably.</p>
         </div>
-
         <div class="retainer-card">
           <div class="retainer-pricing">
-            <div class="retainer-price-block">
-              <span class="retainer-price">Contact for Quotation</span>
-            </div>
+            <div class="retainer-price-block"><span class="retainer-price">Let's talk</span></div>
             <p class="retainer-note">Pricing scales with system complexity and support scope.</p>
-            <a href="#contact" class="btn btn-primary">Discuss Retainer</a>
+            <a href="#contact" class="btn btn-primary btn-full">Discuss a retainer</a>
           </div>
-
           <div class="retainer-features">
-            <div class="retainer-feature">
-              <div class="retainer-feature-icon" aria-hidden="true">
-                <svg viewBox="0 0 16 16" fill="none">
-                  <circle cx="8" cy="8" r="7" stroke="#1AC5FF" stroke-width="1.2"/>
-                  <path d="M5 8l2 2 4-4" stroke="#1AC5FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div>
-                <h4 class="retainer-feature-title">System Monitoring</h4>
-                <p class="retainer-feature-desc">Continuous observability with proactive alerting for anomalies and failures.</p>
-              </div>
-            </div>
-
-            <div class="retainer-feature">
-              <div class="retainer-feature-icon" aria-hidden="true">
-                <svg viewBox="0 0 16 16" fill="none">
-                  <circle cx="8" cy="8" r="7" stroke="#1AC5FF" stroke-width="1.2"/>
-                  <path d="M5 8l2 2 4-4" stroke="#1AC5FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div>
-                <h4 class="retainer-feature-title">Performance Optimization</h4>
-                <p class="retainer-feature-desc">Regular review and tuning of retrieval quality, latency, and resource usage.</p>
-              </div>
-            </div>
-
-            <div class="retainer-feature">
-              <div class="retainer-feature-icon" aria-hidden="true">
-                <svg viewBox="0 0 16 16" fill="none">
-                  <circle cx="8" cy="8" r="7" stroke="#1AC5FF" stroke-width="1.2"/>
-                  <path d="M5 8l2 2 4-4" stroke="#1AC5FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div>
-                <h4 class="retainer-feature-title">Bug Fixes &amp; Updates</h4>
-                <p class="retainer-feature-desc">Timely resolution of issues as your system encounters real-world edge cases.</p>
-              </div>
-            </div>
-
-            <div class="retainer-feature">
-              <div class="retainer-feature-icon" aria-hidden="true">
-                <svg viewBox="0 0 16 16" fill="none">
-                  <circle cx="8" cy="8" r="7" stroke="#1AC5FF" stroke-width="1.2"/>
-                  <path d="M5 8l2 2 4-4" stroke="#1AC5FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div>
-                <h4 class="retainer-feature-title">Priority Support</h4>
-                <p class="retainer-feature-desc">Direct access to the engineering team with guaranteed response times.</p>
-              </div>
-            </div>
-
-            <div class="retainer-feature">
-              <div class="retainer-feature-icon" aria-hidden="true">
-                <svg viewBox="0 0 16 16" fill="none">
-                  <circle cx="8" cy="8" r="7" stroke="#1AC5FF" stroke-width="1.2"/>
-                  <path d="M5 8l2 2 4-4" stroke="#1AC5FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div>
-                <h4 class="retainer-feature-title">Monthly Reports</h4>
-                <p class="retainer-feature-desc">Executive-level summaries of system health, performance trends, and recommended improvements.</p>
-              </div>
-            </div>
+            <div class="retainer-feature"><div class="retainer-feature-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#1AC5FF" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#1AC5FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h4 class="retainer-feature-title">System monitoring</h4><p class="retainer-feature-desc">Continuous observability with proactive alerting for anomalies and failures.</p></div></div>
+            <div class="retainer-feature"><div class="retainer-feature-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#1AC5FF" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#1AC5FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h4 class="retainer-feature-title">Performance optimization</h4><p class="retainer-feature-desc">Regular review and tuning of retrieval quality, latency, and resource usage.</p></div></div>
+            <div class="retainer-feature"><div class="retainer-feature-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#1AC5FF" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#1AC5FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h4 class="retainer-feature-title">Bug fixes &amp; updates</h4><p class="retainer-feature-desc">Timely resolution of issues as your system meets real-world edge cases.</p></div></div>
+            <div class="retainer-feature"><div class="retainer-feature-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#1AC5FF" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#1AC5FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h4 class="retainer-feature-title">Priority support</h4><p class="retainer-feature-desc">Direct access to the engineering team with guaranteed response times.</p></div></div>
+            <div class="retainer-feature"><div class="retainer-feature-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#1AC5FF" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#1AC5FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h4 class="retainer-feature-title">Monthly reports</h4><p class="retainer-feature-desc">Executive summaries of system health, performance trends, and recommendations.</p></div></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         CONTACT SECTION
-    ============================================================ -->
+    <!-- ===== CONTACT ===== -->
     <section class="contact section" id="contact" aria-labelledby="contact-heading">
       <div class="container">
         <div class="contact-grid">
-
           <div class="contact-info">
-            <div class="section-eyebrow">GET IN TOUCH</div>
-            <h2 class="section-heading" id="contact-heading">Schedule a Discovery Call</h2>
-            <p class="contact-lead">
-              Tell us about your AI system or project. We'll review your situation and come prepared with specific observations and next steps — no generic sales pitch.
-            </p>
-
+            <div class="section-eyebrow">Get in touch</div>
+            <h2 class="section-heading" id="contact-heading">Schedule a discovery call.</h2>
+            <p class="contact-lead">Tell us about your AI system or project. We'll review your situation and come prepared with specific observations and next steps — no generic sales pitch.</p>
             <div class="contact-details">
-              <a href="mailto:tensraai@gmail.com" class="contact-detail-item">
-                <div class="contact-detail-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#1AC5FF" stroke-width="1.5"/>
-                    <path d="M22 6l-10 7L2 6" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="contact-detail-label">Email</p>
-                  <p class="contact-detail-value">tensraai@gmail.com</p>
-                </div>
-              </a>
-
-              <a href="https://www.linkedin.com/company/tensra/" class="contact-detail-item" target="_blank" rel="noopener noreferrer">
-                <div class="contact-detail-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <rect x="2" y="2" width="20" height="20" rx="3" stroke="#1AC5FF" stroke-width="1.5"/>
-                    <path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 10v7" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="contact-detail-label">LinkedIn</p>
-                  <p class="contact-detail-value">Tensra AI</p>
-                </div>
-              </a>
+              <a href="mailto:tensraai@gmail.com" class="contact-detail-item"><div class="contact-detail-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#1AC5FF" stroke-width="1.5"/><path d="M22 6l-10 7L2 6" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/></svg></div><div><p class="contact-detail-label">Email</p><p class="contact-detail-value">tensraai@gmail.com</p></div></a>
+              <a href="https://www.linkedin.com/company/tensra/" class="contact-detail-item" target="_blank" rel="noopener noreferrer"><div class="contact-detail-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="3" stroke="#1AC5FF" stroke-width="1.5"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 10v7" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/></svg></div><div><p class="contact-detail-label">LinkedIn</p><p class="contact-detail-value">Tensra AI</p></div></a>
             </div>
-
-            <div class="contact-guarantee">
-              <div class="guarantee-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#1AC5FF" stroke-width="1.5" stroke-linejoin="round"/>
-                </svg>
+            <div class="contact-guarantee"><div class="guarantee-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#1AC5FF" stroke-width="1.5" stroke-linejoin="round"/></svg></div><p>We respond within 24 hours. No offshore call centers, no junior account managers — you speak directly with the engineers who'll work on your project.</p></div>
+          </div>
+          <div class="contact-form-wrapper">
+            <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate aria-label="Contact form">
+              <input type="hidden" name="access_key" value="38dadbee-3a05-417a-89c2-88414f9f8bd8" />
+              <div class="form-row">
+                <div class="form-group"><label class="form-label" for="name">Name <span class="required">*</span></label><input class="form-input" type="text" id="name" name="name" placeholder="Your full name" autocomplete="name" /></div>
+                <div class="form-group"><label class="form-label" for="company">Company</label><input class="form-input" type="text" id="company" name="company" placeholder="Company or agency" autocomplete="organization" /></div>
               </div>
-              <p>We respond within 24 hours. No offshore call centers, no junior account managers — you'll speak directly with the engineers who'll work on your project.</p>
+              <div class="form-group"><label class="form-label" for="email">Email <span class="required">*</span></label><input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" /></div>
+              <div class="form-row">
+                <div class="form-group"><label class="form-label" for="project-type">Project type</label><select class="form-select" id="project-type" name="project_type"><option value="" disabled selected>Select project type</option><option value="knowledge">Internal Knowledge AI</option><option value="support">AI Customer Support Agent</option><option value="docs">Document Intelligence System</option><option value="retainer">Ongoing Retainer Support</option><option value="white-label">Agency / White Label</option><option value="other">Other / Not Sure Yet</option></select></div>
+                <div class="form-group"><label class="form-label" for="budget">Budget range</label><select class="form-select" id="budget" name="budget"><option value="" disabled selected>Select budget range</option><option value="small">Small Project</option><option value="medium">Medium Project</option><option value="large">Large Project</option><option value="enterprise">Enterprise Scale</option><option value="retainer">Monthly Retainer</option></select></div>
+              </div>
+              <div class="form-group"><label class="form-label" for="message">Message <span class="required">*</span></label><textarea class="form-textarea" id="message" name="message" rows="5" placeholder="Describe your AI system or project. What's working? What isn't? What do you need?"></textarea></div>
+              <button type="submit" class="btn btn-primary btn-full btn-lg" id="submit-btn"><span class="btn-text">Send message</span><svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <p class="form-privacy">We don't share your information with third parties.</p>
+            </form>
+            <div class="form-success" id="form-success" role="alert" aria-live="polite" hidden>
+              <div class="form-success-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round"/><path d="M22 4L12 14.01l-3-3" stroke="#1AC5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <h3>Message received</h3>
+              <p>We'll review your project details and respond within 24 hours.</p>
             </div>
           </div>
-
-<div class="contact-form-wrapper">
-  <form
-    class="contact-form"
-    id="contact-form"
-    action="https://api.web3forms.com/submit"
-    method="POST"
-    novalidate
-    aria-label="Contact form"
-  >
-    <!-- Web3Forms Access Key -->
-    <input
-      type="hidden"
-      name="access_key"
-      value="38dadbee-3a05-417a-89c2-88414f9f8bd8"
-    />
-
-    <div class="form-row">
-      <div class="form-group">
-        <label class="form-label" for="name">
-          Name <span class="required" aria-label="required">*</span>
-        </label>
-        <input
-          class="form-input"
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Your full name"
-          autocomplete="name"
-        />
-      </div>
-
-      <div class="form-group">
-        <label class="form-label" for="company">Company</label>
-        <input
-          class="form-input"
-          type="text"
-          id="company"
-          name="company"
-          placeholder="Company or agency"
-          autocomplete="organization"
-        />
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="form-label" for="email">
-        Email <span class="required" aria-label="required">*</span>
-      </label>
-      <input
-        class="form-input"
-        type="email"
-        id="email"
-        name="email"
-        placeholder="your@email.com"
-        autocomplete="email"
-      />
-    </div>
-
-    <div class="form-row">
-      <div class="form-group">
-        <label class="form-label" for="project-type">Project Type</label>
-        <select
-          class="form-select"
-          id="project-type"
-          name="project_type"
-        >
-          <option value="" disabled selected>Select project type</option>
-          <option value="audit">AI System Audit</option>
-          <option value="rag">Private RAG Knowledge Base</option>
-          <option value="agent">AI Agent Build / Fix</option>
-          <option value="retainer">Ongoing Retainer Support</option>
-          <option value="white-label">Agency / White Label</option>
-          <option value="other">Other / Not Sure Yet</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label" for="budget">Budget Range</label>
-        <select
-          class="form-select"
-          id="budget"
-          name="budget"
-        >
-          <option value="" disabled selected>Select budget range</option>
-          <option value="small">Small Project</option>
-          <option value="medium">Medium Project</option>
-          <option value="large">Large Project</option>
-          <option value="enterprise">Enterprise Scale</option>
-          <option value="retainer">Monthly Retainer</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="form-label" for="message">
-        Message <span class="required" aria-label="required">*</span>
-      </label>
-      <textarea
-        class="form-textarea"
-        id="message"
-        name="message"
-        rows="5"
-        placeholder="Describe your AI system or project. What's working? What isn't? What do you need?"
-      ></textarea>
-    </div>
-
-    <button
-      type="submit"
-      class="btn btn-primary btn-full btn-lg"
-      id="submit-btn"
-    >
-      <span class="btn-text">Send Message</span>
-      <svg
-        class="btn-icon"
-        viewBox="0 0 16 16"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path
-          d="M3 8h10M9 4l4 4-4 4"
-          stroke="currentColor"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-    </button>
-
-    <p class="form-privacy">
-      We don't share your information with third parties.
-    </p>
-  </form>
-
-  <!-- Success Message -->
-  <div
-    class="form-success"
-    id="form-success"
-    role="alert"
-    aria-live="polite"
-    hidden
-  >
-    <div class="form-success-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none">
-        <path
-          d="M22 11.08V12a10 10 0 11-5.93-9.14"
-          stroke="#1AC5FF"
-          stroke-width="1.5"
-          stroke-linecap="round"
-        />
-        <path
-          d="M22 4L12 14.01l-3-3"
-          stroke="#1AC5FF"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-    </div>
-
-    <h3>Message received</h3>
-    <p>We'll review your project details and respond within 24 hours.</p>
-  </div>
-</div>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
+  <!-- ===== FOOTER ===== -->
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-inner">
-
-        <!-- Brand -->
         <div class="footer-brand">
-          <a href="#" class="nav-logo footer-logo" aria-label="Tensra AI">
-            <img src="logo.png" alt="Tensra AI" class="logo-img logo-img--footer" />
-          </a>
+          <a href="#" class="nav-logo footer-logo" aria-label="Tensra AI"><img src="logo.png" alt="Tensra AI" class="logo-img logo-img--footer" /></a>
           <p class="footer-tagline">AI systems built to survive production.</p>
         </div>
-
-        <!-- Nav links -->
         <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="#services" class="footer-link">Products</a>
+          <a href="#services" class="footer-link">Services</a>
           <a href="#about" class="footer-link">About</a>
           <a href="#process" class="footer-link">Process</a>
           <a href="#white-label" class="footer-link">Agencies</a>
           <a href="#contact" class="footer-link">Contact</a>
         </nav>
-
-        <!-- Contact -->
         <div class="footer-contact">
           <a href="mailto:tensraai@gmail.com" class="footer-email">tensraai@gmail.com</a>
           <a href="https://www.linkedin.com/company/tensra/" class="footer-link footer-link--dim" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
-
       </div>
-
       <div class="footer-bottom">
-        <p class="footer-copy">&copy; 2025 Tensra AI. All rights reserved.</p>
+        <p class="footer-copy">© 2026 Tensra AI. All rights reserved.</p>
+        <p class="footer-meta">AI Infrastructure · RAG Systems · Agent Architecture · Enterprise Deployment</p>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>

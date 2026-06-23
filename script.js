@@ -172,11 +172,63 @@ function initScrollSpy() {
   update();
 }
 
-/* ===== 6. INIT ===== */
+
+/* ===== 7. HERO GRADIENT CANVAS (abstract 3D render) ===== */
+function initHeroCanvas() {
+  const canvas = document.getElementById('hero-canvas');
+  if (!canvas) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const ctx = canvas.getContext('2d');
+  let w, h, t = 0;
+  const DPR = Math.min(window.devicePixelRatio || 1, 2);
+
+  // floating metaballs — soft glowing orbs that drift and morph
+  const blobs = [
+    { x: .30, y: .42, r: .42, hue: [24, 210, 255],  sx: .00021, sy: .00017, px: 0,    py: 1.7 },
+    { x: .68, y: .38, r: .38, hue: [91, 107, 255],   sx: .00018, sy: .00023, px: 2.1,  py: .6 },
+    { x: .52, y: .60, r: .34, hue: [60, 170, 255],   sx: .00025, sy: .00015, px: 4.0,  py: 3.2 },
+    { x: .42, y: .30, r: .26, hue: [130, 90, 255],   sx: .00020, sy: .00020, px: 1.0,  py: 5.0 }
+  ];
+
+  function resize() {
+    w = canvas.clientWidth; h = canvas.clientHeight;
+    canvas.width = w * DPR; canvas.height = h * DPR;
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+
+  function draw() {
+    t += 1;
+    ctx.clearRect(0, 0, w, h);
+    ctx.globalCompositeOperation = 'lighter';
+
+    for (const b of blobs) {
+      const cx = (b.x + Math.sin(t * b.sx + b.px) * 0.10) * w;
+      const cy = (b.y + Math.cos(t * b.sy + b.py) * 0.10) * h;
+      const rad = b.r * Math.min(w, h) * (1 + Math.sin(t * 0.0006 + b.px) * 0.08);
+      const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, rad);
+      const [r, gr, bl] = b.hue;
+      g.addColorStop(0,   `rgba(${r},${gr},${bl},0.55)`);
+      g.addColorStop(0.4, `rgba(${r},${gr},${bl},0.18)`);
+      g.addColorStop(1,   `rgba(${r},${gr},${bl},0)`);
+      ctx.fillStyle = g;
+      ctx.beginPath(); ctx.arc(cx, cy, rad, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.globalCompositeOperation = 'source-over';
+    requestAnimationFrame(draw);
+  }
+
+  resize();
+  window.addEventListener('resize', resize, { passive: true });
+  draw();
+}
+
+/* ===== 8. INIT ===== */
 function init() {
   addRevealClasses();
   createRevealObserver();
   initScrollSpy();
+  initHeroCanvas();
 }
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
 else init();
