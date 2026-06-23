@@ -1,121 +1,75 @@
 /**
  * Tensra AI — Main Script
- * Handles: navigation, scroll effects, reveal animations, form submission
+ * Navigation · scroll effects · reveal animations · form submission · scrollspy
  */
-
 'use strict';
 
-// ============================================================
-// 1. NAVIGATION
-// ============================================================
+/* ===== 1. NAVIGATION ===== */
+const navHeader = document.getElementById('nav-header');
+const navToggle = document.getElementById('nav-toggle');
+const navLinks  = document.getElementById('nav-links');
 
-const navHeader  = document.getElementById('nav-header');
-const navToggle  = document.getElementById('nav-toggle');
-const navLinks   = document.getElementById('nav-links');
-
-/**
- * Sticky nav: add .scrolled class when user scrolls past the fold
- */
 function handleNavScroll() {
-  if (window.scrollY > 40) {
-    navHeader.classList.add('scrolled');
-  } else {
-    navHeader.classList.remove('scrolled');
-  }
+  if (window.scrollY > 30) navHeader.classList.add('scrolled');
+  else navHeader.classList.remove('scrolled');
+}
+window.addEventListener('scroll', handleNavScroll, { passive: true });
+handleNavScroll();
+
+function closeMenu() {
+  navLinks.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
 }
 
-window.addEventListener('scroll', handleNavScroll, { passive: true });
-handleNavScroll(); // run on load
-
-/**
- * Mobile hamburger toggle
- */
 if (navToggle && navLinks) {
   navToggle.addEventListener('click', () => {
     const isOpen = navLinks.classList.toggle('open');
     navToggle.setAttribute('aria-expanded', String(isOpen));
-    // Prevent body scroll when menu is open
     document.body.style.overflow = isOpen ? 'hidden' : '';
   });
 
-  // Close menu when a nav link is clicked
-  navLinks.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
   });
 
-  // Close menu on outside click
   document.addEventListener('click', (e) => {
     if (navLinks.classList.contains('open') &&
-        !navLinks.contains(e.target) &&
-        !navToggle.contains(e.target)) {
-      navLinks.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
+        !navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+      closeMenu();
     }
   });
 }
 
-// ============================================================
-// 2. SMOOTH SCROLL FOR ANCHOR LINKS
-// ============================================================
-
+/* ===== 2. SMOOTH SCROLL ===== */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
-    const targetId = this.getAttribute('href');
-    if (targetId === '#') return;
-
-    const target = document.querySelector(targetId);
+    const id = this.getAttribute('href');
+    if (id === '#') return;
+    const target = document.querySelector(id);
     if (!target) return;
-
     e.preventDefault();
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
 
-// ============================================================
-// 3. SCROLL REVEAL ANIMATIONS
-// ============================================================
-
-/**
- * Add .reveal class to elements we want to animate on scroll.
- * This is applied dynamically so that if JS is disabled the
- * elements remain visible.
- */
+/* ===== 3. SCROLL REVEAL ===== */
 const REVEAL_SELECTORS = [
-  '.pillar-card',
-  '.service-card',
-  '.process-step',
-  '.wl-benefit-card',
-  '.retainer-feature',
-  '.about-content',
-  '.about-pillars',
-  '.section-header',
-  '.wl-content',
-  '.wl-benefits',
-  '.retainer-card',
-  '.contact-info',
-  '.contact-form-wrapper',
-  '.hero-left',
+  '.section-header', '.about-content', '.pillar-card', '.service-card',
+  '.process-step', '.wl-content', '.wl-benefit-card', '.retainer-card',
+  '.contact-info', '.contact-form-wrapper', '.stat-block'
 ];
 
 function addRevealClasses() {
-  REVEAL_SELECTORS.forEach(selector => {
-    document.querySelectorAll(selector).forEach((el, index) => {
-      if (!el.classList.contains('reveal')) {
-        el.classList.add('reveal');
-        // Stagger delay for grid children
-        const parent = el.parentElement;
-        if (parent) {
-          const siblings = parent.querySelectorAll(':scope > .reveal');
-          const position = Array.from(siblings).indexOf(el);
-          if (position > 0 && position <= 4) {
-            el.classList.add(`reveal-delay-${position}`);
-          }
-        }
+  REVEAL_SELECTORS.forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => {
+      if (el.classList.contains('reveal')) return;
+      el.classList.add('reveal');
+      const parent = el.parentElement;
+      if (parent) {
+        const siblings = parent.querySelectorAll(':scope > .reveal');
+        const pos = Array.from(siblings).indexOf(el);
+        if (pos > 0 && pos <= 4) el.classList.add(`reveal-delay-${pos}`);
       }
     });
   });
@@ -123,119 +77,68 @@ function addRevealClasses() {
 
 function createRevealObserver() {
   if (!('IntersectionObserver' in window)) {
-    // Fallback: show all elements immediately
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('revealed'));
     return;
   }
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          observer.unobserve(entry.target); // animate once
-        }
-      });
-    },
-    {
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
-    }
-  );
-
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 }
 
-// ============================================================
-// 5. CONTACT FORM
-// ============================================================
-
+/* ===== 4. CONTACT FORM ===== */
 const contactForm = document.getElementById('contact-form');
 const formSuccess = document.getElementById('form-success');
 const submitBtn   = document.getElementById('submit-btn');
 
-if (contactForm) {
-  contactForm.addEventListener('submit', handleFormSubmit);
-}
+if (contactForm) contactForm.addEventListener('submit', handleFormSubmit);
 
 function handleFormSubmit(e) {
   e.preventDefault();
-
   if (!validateForm()) return;
-
   setSubmitState('loading');
 
-  const formData = new FormData(contactForm);
-
-  fetch('https://api.web3forms.com/submit', {
-    method: 'POST',
-    body: formData,
-  })
-    .then(res => res.json())
+  fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(contactForm) })
+    .then(r => r.json())
     .then(data => {
-      if (data.success) {
-        showSuccess();
-        contactForm.reset();
-      } else {
-        console.error('Web3Forms error:', data);
-        setSubmitState('error');
-      }
+      if (data.success) { showSuccess(); contactForm.reset(); }
+      else { console.error('Web3Forms error:', data); setSubmitState('error'); }
     })
-    .catch(err => {
-      console.error('Submission error:', err);
-      setSubmitState('error');
-    });
+    .catch(err => { console.error('Submission error:', err); setSubmitState('error'); });
 }
 
 function validateForm() {
   let valid = true;
-
-  // Clear previous errors
   contactForm.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
-
-  const name    = document.getElementById('name');
-  const email   = document.getElementById('email');
+  const name = document.getElementById('name');
+  const email = document.getElementById('email');
   const message = document.getElementById('message');
 
-  if (!name.value.trim()) {
-    name.classList.add('error');
-    name.focus();
-    valid = false;
-  }
-
-  if (!email.value.trim() || !isValidEmail(email.value)) {
-    if (valid) email.focus();
-    email.classList.add('error');
-    valid = false;
-  }
-
-  if (!message.value.trim()) {
-    if (valid) message.focus();
-    message.classList.add('error');
-    valid = false;
-  }
-
+  if (!name.value.trim()) { name.classList.add('error'); name.focus(); valid = false; }
+  if (!email.value.trim() || !isValidEmail(email.value)) { if (valid) email.focus(); email.classList.add('error'); valid = false; }
+  if (!message.value.trim()) { if (valid) message.focus(); message.classList.add('error'); valid = false; }
   return valid;
 }
 
-function isValidEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
+function isValidEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
 
 function setSubmitState(state) {
   if (!submitBtn) return;
-
-  const btnText = submitBtn.querySelector('.btn-text');
-  const btnIcon = submitBtn.querySelector('.btn-icon');
-
+  const text = submitBtn.querySelector('.btn-text');
+  const icon = submitBtn.querySelector('.btn-icon');
   if (state === 'loading') {
     submitBtn.disabled = true;
-    if (btnText) btnText.textContent = 'Sent';
-    if (btnIcon) btnIcon.style.display = 'none';
+    if (text) text.textContent = 'Sending…';
+    if (icon) icon.style.display = 'none';
   } else if (state === 'error') {
     submitBtn.disabled = false;
-    if (btnText) btnText.textContent = 'Try Again';
-    if (btnIcon) btnIcon.style.display = '';
+    if (text) text.textContent = 'Try again';
+    if (icon) icon.style.display = '';
   }
 }
 
@@ -247,83 +150,33 @@ function showSuccess() {
   }
 }
 
-// ============================================================
-// 6. ACTIVE NAV HIGHLIGHTING (SCROLLSPY)
-// ============================================================
-
+/* ===== 5. SCROLLSPY ===== */
 function initScrollSpy() {
-  const sections    = Array.from(document.querySelectorAll('section[id]'));
-  const navLinkEls  = document.querySelectorAll('.nav-link');
-  const NAV_HEIGHT  = 80; // px offset from top
+  const sections = Array.from(document.querySelectorAll('section[id]'));
+  const links = document.querySelectorAll('.nav-link');
+  const OFFSET = 90;
+  if (!sections.length || !links.length) return;
 
-  if (!sections.length || !navLinkEls.length) return;
-
-  function getActiveId() {
-    // Work backwards — the last section whose top edge is at or above
-    // the nav offset is the "active" one
-    let activeId = sections[0].id;
-    for (const section of sections) {
-      const top = section.getBoundingClientRect().top;
-      if (top <= NAV_HEIGHT + 10) {
-        activeId = section.id;
-      }
+  function activeId() {
+    let id = sections[0].id;
+    for (const s of sections) {
+      if (s.getBoundingClientRect().top <= OFFSET + 10) id = s.id;
     }
-    return activeId;
+    return id;
   }
-
-  function updateActiveLink() {
-    const activeId = getActiveId();
-    navLinkEls.forEach(link => {
-      const href = link.getAttribute('href');
-      link.classList.toggle('active', href === `#${activeId}`);
-    });
+  function update() {
+    const id = activeId();
+    links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === `#${id}`));
   }
-
-  window.addEventListener('scroll', updateActiveLink, { passive: true });
-  updateActiveLink(); // set on load
+  window.addEventListener('scroll', update, { passive: true });
+  update();
 }
 
-
-function initCardTilt() {
-  const cards = document.querySelectorAll('.service-card, .pillar-card');
-
-  cards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect   = card.getBoundingClientRect();
-      const x      = e.clientX - rect.left;
-      const y      = e.clientY - rect.top;
-      const cx     = rect.width  / 2;
-      const cy     = rect.height / 2;
-      const tiltX  = ((y - cy) / cy) * 3;  // max 3deg
-      const tiltY  = ((cx - x) / cx) * 3;
-
-      card.style.transform = `translateY(-4px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-    });
-  });
-}
-
-// ============================================================
-// 8. INIT
-// ============================================================
-
+/* ===== 6. INIT ===== */
 function init() {
   addRevealClasses();
   createRevealObserver();
   initScrollSpy();
-
-  // Only enable tilt on non-touch devices
-  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    initCardTilt();
-  }
 }
-
-// Run after DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', init);
-} else {
-  init();
-}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+else init();
