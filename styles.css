@@ -839,19 +839,20 @@ h1, h2, h3, h4 {
    white-label/retainer styles removed (sections deleted in HTML).
    ============================================================ */
 
-/* Compact hero headline — reduced further (~15-20% on top of prior pass)
-   with tighter line-height at every breakpoint so the hero fits comfortably
-   above the fold. Desktop -> tablet -> mobile each step down explicitly. */
+/* Compact hero headline — explicit px targets per final polish pass:
+   desktop 56-64px, tablet 44-50px, mobile 34-40px. Coefficients verified
+   numerically to land inside range across realistic viewport widths,
+   not just at clamp extremes. Tight line-height throughout. */
 .hero-headline--compact {
-  font-size: clamp(1.5rem, 3.6vw, 3.2rem);
-  line-height: 1.04;
+  font-size: clamp(3.5rem, 5.5vw, 4rem); /* 56-64px */
+  line-height: 1.02;
   max-width: 13ch;
 }
 @media (max-width: 1023px) {
-  .hero-headline--compact { font-size: clamp(1.4rem, 4.6vw, 2.5rem); line-height: 1.08; }
+  .hero-headline--compact { font-size: clamp(2.75rem, 5.8vw, 3.125rem); line-height: 1.06; } /* 44-50px */
 }
 @media (max-width: 767px) {
-  .hero-headline--compact { font-size: clamp(1.3rem, 6vw, 2.05rem); line-height: 1.12; max-width: 100%; }
+  .hero-headline--compact { font-size: clamp(2.125rem, 9vw, 2.5rem); line-height: 1.1; max-width: 100%; } /* 34-40px */
 }
 
 /* Tighten hero vertical rhythm slightly so it sits comfortably above the fold */
@@ -859,20 +860,19 @@ h1, h2, h3, h4 {
   margin-top: -.25rem;
 }
 
-/* Section H2s sized down for a more enterprise/consulting feel —
-   smaller ceiling, tighter line-height, same family/weight/letter-spacing */
+/* Section H2s — boutique/consultancy feel: smaller ceiling, tighter line-height */
 .section-heading {
-  font-size: clamp(1.7rem, 3vw, 2.55rem);
-  line-height: 1.14;
+  font-size: clamp(1.6rem, 2.7vw, 2.25rem); /* ~26-36px */
+  line-height: 1.16;
 }
 @media (max-width: 767px) {
-  .section-heading { font-size: clamp(1.5rem, 5.5vw, 2rem); line-height: 1.18; }
+  .section-heading { font-size: clamp(1.4rem, 5vw, 1.75rem); line-height: 1.2; } /* ~22-28px */
 }
 
-/* Extra tightening for sections explicitly called out as feeling too long */
-.use-cases, .projects, .process, .contact {
-  padding-block: calc(var(--section-pad) - 1rem);
-}
+/* Note: base --section-pad (5.5rem, down from original 7rem) already
+   delivers a ~21% reduction sitewide, landing inside the requested
+   20-25% range — including for use-cases, projects, process, and
+   contact, which share the same .section padding-block. */
 
 /* Why Tensra — reuses pillar-card grid but caps to 4 columns on desktop */
 .why-tensra-grid {
