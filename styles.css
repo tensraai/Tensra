@@ -46,7 +46,7 @@
 
   --max-width: 1200px;
   --nav-h: 72px;
-  --section-pad: 7rem;
+  --section-pad: 5.5rem;
 
   --ease: cubic-bezier(.22, 1, .36, 1);
   --t-fast: 160ms var(--ease);
@@ -136,7 +136,7 @@ h1, h2, h3, h4 {
   line-height: 1.7;
 }
 
-.section-header { max-width: 760px; margin-bottom: var(--s16); }
+.section-header { max-width: 760px; margin-bottom: var(--s12); }
 .section-header--center { text-align: center; margin-inline: auto; }
 .section-header--center .section-eyebrow::before { display: none; }
 .section-header--center .section-subheading { margin-inline: auto; }
@@ -546,7 +546,8 @@ h1, h2, h3, h4 {
 /* ---------- 15. CONTACT ---------- */
 .contact { background: var(--bg); }
 .contact-grid { display: grid; grid-template-columns: 1fr 1.25fr; gap: var(--s16); align-items: start; }
-.contact-lead { font-size: 1.04rem; color: var(--text-soft); line-height: 1.7; margin-bottom: var(--s8); }
+.contact-lead { font-size: 1.04rem; color: var(--text-soft); line-height: 1.7; margin-bottom: var(--s4); }
+.contact-note { font-size: .9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: var(--s6); }
 .contact-details { display: flex; flex-direction: column; gap: var(--s4); margin-bottom: var(--s6); }
 .contact-detail-item {
   display: flex; gap: var(--s4); align-items: center; padding: var(--s4);
@@ -724,61 +725,6 @@ h1, h2, h3, h4 {
   font-family: var(--font-mono); font-size: .8rem;
 }
 
-/* ---------- 11d. FOUNDERS ---------- */
-.founders { background: var(--bg); border-block: 1px solid var(--border); }
-.founders-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--s6);
-  max-width: 880px;
-}
-.founder-card {
-  display: flex; gap: var(--s6); align-items: flex-start;
-  padding: var(--s8);
-  background: linear-gradient(160deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-  border: 1px solid var(--border); border-radius: var(--radius-lg);
-  transition: border-color var(--t), transform var(--t), box-shadow var(--t);
-}
-.founder-card:hover {
-  border-color: var(--border-hover);
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(0,0,0,.4), 0 0 24px rgba(26,197,255,.07);
-}
-.founder-avatar {
-  flex-shrink: 0;
-}
-.founder-initials {
-  width: 64px; height: 64px; border-radius: var(--radius);
-  background: var(--accent-soft); border: 1px solid var(--accent-line);
-  color: var(--accent); font-family: var(--font-mono);
-  font-size: 1.1rem; font-weight: 700;
-  display: flex; align-items: center; justify-content: center;
-  letter-spacing: .04em;
-}
-.founder-info { display: flex; flex-direction: column; gap: var(--s2); }
-.founder-name {
-  font-size: 1.08rem; font-weight: 700; color: var(--text);
-  letter-spacing: -0.01em;
-}
-.founder-role {
-  font-family: var(--font-mono); font-size: .72rem; font-weight: 500;
-  letter-spacing: .08em; text-transform: uppercase; color: var(--accent);
-}
-.founder-bio {
-  font-size: .875rem; color: var(--text-muted); line-height: 1.65;
-}
-.founder-links { display: flex; gap: var(--s3); margin-top: var(--s1); }
-.founder-link {
-  display: inline-flex; align-items: center; gap: var(--s2);
-  font-size: .82rem; font-weight: 500; color: var(--text-muted);
-  padding: .3rem .7rem; border-radius: 8px;
-  border: 1px solid var(--border-2);
-  transition: color var(--t-fast), border-color var(--t-fast), background var(--t-fast);
-}
-.founder-link:hover {
-  color: var(--accent); border-color: var(--accent-line); background: var(--accent-soft);
-}
-
 /* ---------- 17. REVEAL ---------- */
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity var(--t-slow), transform var(--t-slow); }
 .reveal.revealed { opacity: 1; transform: translateY(0); }
@@ -803,8 +749,6 @@ h1, h2, h3, h4 {
   .services-grid { grid-template-columns: repeat(2, 1fr); max-width: none; margin-inline: 0; }
   .use-cases-grid { grid-template-columns: repeat(2, 1fr); }
   .projects-grid { grid-template-columns: 1fr; max-width: 600px; }
-  .founders-grid { grid-template-columns: 1fr; max-width: 520px; }
-  .founder-card { flex-direction: row; }
   .wl-grid { grid-template-columns: 1fr; gap: var(--s10); }
   .wl-benefits { grid-template-columns: 1fr 1fr; }
   .retainer-card { grid-template-columns: 1fr; gap: var(--s8); }
@@ -861,8 +805,6 @@ h1, h2, h3, h4 {
   .wl-benefits { grid-template-columns: 1fr; }
   .use-cases-grid { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
-  .founders-grid { grid-template-columns: 1fr; }
-  .founder-card { flex-direction: column; gap: var(--s4); }
 
   .stats-grid { grid-template-columns: 1fr; gap: var(--s6); }
   .stat-block + .stat-block::before { display: none; }
@@ -897,14 +839,39 @@ h1, h2, h3, h4 {
    white-label/retainer styles removed (sections deleted in HTML).
    ============================================================ */
 
-/* Compact hero headline — ~22% smaller than original clamp,
-   slightly narrower max-width with improved line breaks for new copy */
+/* Compact hero headline — reduced further (~15-20% on top of prior pass)
+   with tighter line-height at every breakpoint so the hero fits comfortably
+   above the fold. Desktop -> tablet -> mobile each step down explicitly. */
 .hero-headline--compact {
-  font-size: clamp(1.7rem, 4.3vw, 3.9rem);
+  font-size: clamp(1.5rem, 3.6vw, 3.2rem);
+  line-height: 1.04;
   max-width: 13ch;
 }
+@media (max-width: 1023px) {
+  .hero-headline--compact { font-size: clamp(1.4rem, 4.6vw, 2.5rem); line-height: 1.08; }
+}
 @media (max-width: 767px) {
-  .hero-headline--compact { font-size: clamp(1.65rem, 7vw, 2.8rem); max-width: 100%; }
+  .hero-headline--compact { font-size: clamp(1.3rem, 6vw, 2.05rem); line-height: 1.12; max-width: 100%; }
+}
+
+/* Tighten hero vertical rhythm slightly so it sits comfortably above the fold */
+.hero-headline--compact + .hero-subheadline {
+  margin-top: -.25rem;
+}
+
+/* Section H2s sized down for a more enterprise/consulting feel —
+   smaller ceiling, tighter line-height, same family/weight/letter-spacing */
+.section-heading {
+  font-size: clamp(1.7rem, 3vw, 2.55rem);
+  line-height: 1.14;
+}
+@media (max-width: 767px) {
+  .section-heading { font-size: clamp(1.5rem, 5.5vw, 2rem); line-height: 1.18; }
+}
+
+/* Extra tightening for sections explicitly called out as feeling too long */
+.use-cases, .projects, .process, .contact {
+  padding-block: calc(var(--section-pad) - 1rem);
 }
 
 /* Why Tensra — reuses pillar-card grid but caps to 4 columns on desktop */
@@ -916,11 +883,4 @@ h1, h2, h3, h4 {
 }
 @media (max-width: 767px) {
   .why-tensra-grid { grid-template-columns: 1fr; }
-}
-
-/* Founder photo — fills the existing initials-avatar footprint */
-.founder-photo {
-  width: 64px; height: 64px; border-radius: var(--radius);
-  object-fit: cover;
-  border: 1px solid var(--accent-line);
 }

@@ -56,7 +56,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 /* ===== 3. SCROLL REVEAL ===== */
 const REVEAL_SELECTORS = [
   '.section-header', '.about-content', '.pillar-card', '.service-card',
-  '.process-step', '.founder-card',
+  '.process-step',
   '.contact-info', '.contact-form-wrapper', '.stat-block'
 ];
 
