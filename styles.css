@@ -224,20 +224,27 @@ h1, h2, h3, h4 {
 .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.6px) rotate(-45deg); }
 
-/* ---------- 7. HERO (plain — no image, no marquee, no sidebar) ---------- */
+/* ---------- 7. HERO (text left, radar graphic right) ---------- */
 .hero {
-  padding-top: calc(var(--nav-h) + var(--s24));
+  padding-top: calc(var(--nav-h) + var(--s20));
   padding-bottom: var(--s20);
   background: var(--bg);
+  overflow: hidden;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: var(--s16);
+  align-items: center;
 }
 .hero-inner {
-  max-width: 780px;
+  max-width: 620px;
 }
 .hero-eyebrow {
   margin-bottom: var(--s4);
 }
 .hero-headline {
-  font-size: clamp(2.4rem, 4.6vw, 3.6rem);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1.12;
@@ -245,14 +252,67 @@ h1, h2, h3, h4 {
   margin-bottom: var(--s6);
 }
 .hero-subheadline {
-  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  font-size: clamp(1rem, 1.3vw, 1.1rem);
   color: var(--text-soft);
   line-height: 1.8;
-  max-width: 560px;
+  max-width: 520px;
   margin-bottom: var(--s8);
 }
 .hero-cta-group {
   display: flex; gap: var(--s4); flex-wrap: wrap;
+}
+
+/* ---------- 7b. HERO RADAR GRAPHIC ---------- */
+.hero-radar {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.radar-svg {
+  width: 100%;
+  height: 100%;
+}
+.radar-tickmarks line {
+  vector-effect: non-scaling-stroke;
+}
+.radar-rotate-slow {
+  transform-origin: 200px 200px;
+  animation: radar-spin 60s linear infinite;
+}
+@keyframes radar-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.radar-orbit-1 {
+  transform-origin: 200px 200px;
+  animation: radar-orbit-a 18s linear infinite;
+}
+.radar-orbit-2 {
+  transform-origin: 200px 200px;
+  animation: radar-orbit-b 24s linear infinite reverse;
+}
+.radar-orbit-3 {
+  transform-origin: 200px 200px;
+  animation: radar-orbit-c 14s ease-in-out infinite;
+}
+@keyframes radar-orbit-a {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes radar-orbit-b {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes radar-orbit-c {
+  0%, 100% { opacity: .55; transform: scale(1); }
+  50%      { opacity: 1;   transform: scale(1.3); }
+}
+
+@media (max-width: 1023px) {
+  .hero-grid { grid-template-columns: 1fr; gap: var(--s10); }
+  .hero-radar { max-width: 360px; margin-inline: auto; }
 }
 
 @media (max-width: 767px) {
@@ -260,6 +320,13 @@ h1, h2, h3, h4 {
   .hero-headline { font-size: clamp(2rem, 8vw, 2.6rem); }
   .hero-cta-group { flex-direction: column; }
   .hero-cta-group .btn { width: 100%; max-width: 320px; justify-content: center; }
+  .hero-radar { max-width: 280px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .radar-rotate-slow, .radar-orbit-1, .radar-orbit-2, .radar-orbit-3 {
+    animation: none;
+  }
 }
 
 /* ---------- 9. STATS BAND ---------- */
