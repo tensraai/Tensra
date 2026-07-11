@@ -1,6 +1,6 @@
 /**
  * Tensra AI — Main Script
- * Navigation · scroll effects · reveal animations · form submission · scrollspy
+ * Navigation · scroll effects · reveal animations · form submission · scrollspy · hero globe parallax
  */
 'use strict';
 
@@ -172,13 +172,38 @@ function initScrollSpy() {
   update();
 }
 
+/* ===== 6. HERO GLOBE SCROLL PARALLAX ===== */
+// The hero globe is position:fixed in CSS so it stays put while the page
+// scrolls over it, like a persistent background element rather than
+// something that scrolls away with the hero section. This function fades
+// it out and adds a subtle rotation/scale drift as the user scrolls past
+// the hero, so it reads as "the globe stays behind, the page moves past
+// it" — matching the reference site's behavior.
+function initGlobeParallax() {
+  const scene = document.querySelector('.hero-globe-scene');
+  if (!scene) return;
 
+  function update() {
+    const fadeDistance = window.innerHeight * 1.05; // fade out over ~1 viewport of scroll
+    const progress = Math.min(window.scrollY / fadeDistance, 1);
+    const opacity = 1 - progress;
+    const scale = 1 - progress * 0.15;   // slight shrink as it fades
+    const rotate = progress * 25;        // subtle extra spin tied to scroll
+
+    scene.style.opacity = opacity.toFixed(3);
+    scene.style.transform = `translate(-50%, -50%) scale(${scale.toFixed(3)}) rotate(${rotate.toFixed(2)}deg)`;
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+}
 
 /* ===== 8. INIT ===== */
 function init() {
   addRevealClasses();
   createRevealObserver();
   initScrollSpy();
+  initGlobeParallax();
 }
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
 else init();

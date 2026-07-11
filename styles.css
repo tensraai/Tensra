@@ -238,14 +238,15 @@ h1, h2, h3, h4 {
 
 /* ----- 3D globe scene ----- */
 .hero-globe-scene {
-  position: absolute;
+  position: fixed;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   width: min(760px, 82vw);
   height: min(760px, 82vw);
   perspective: 1400px;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
+  will-change: opacity, transform;
 }
 .hero-globe {
   position: absolute;
