@@ -185,24 +185,16 @@ function initGlobeParallax() {
 
   function update() {
     const docHeight = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
-    // Stay fully visible through the hero, then fade out gently only near
-    // the very end of the page (last ~15% of scroll), so it persists as a
-    // faint presence across the whole site rather than disappearing after
-    // one section.
+    // The globe itself does not move or rotate — it stays perfectly still.
+    // This only fades it out gently near the very end of the page.
     const fadeStart = docHeight * 0.7;
     const fadeRange = docHeight * 0.3;
     const fadeProgress = Math.min(Math.max((window.scrollY - fadeStart) / fadeRange, 0), 1);
 
     const baseOpacity = 0.9;
     const opacity = baseOpacity * (1 - fadeProgress);
-    const scale = 1 - fadeProgress * 0.1;
-    // Continuous slow extra rotation tied to total scroll position, on top
-    // of the CSS keyframe drift, so it visibly keeps turning as you move
-    // through the whole page, not just during the hero.
-    const rotate = (window.scrollY / docHeight) * 60;
 
     scene.style.opacity = opacity.toFixed(3);
-    scene.style.transform = `translate(-50%, -50%) scale(${scale.toFixed(3)}) rotate(${rotate.toFixed(2)}deg)`;
   }
 
   window.addEventListener('scroll', update, { passive: true });
