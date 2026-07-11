@@ -374,7 +374,7 @@ main {
 }
 
 /* ---------- 9. STATS BAND ---------- */
-.stats-band { padding-block: var(--s16); background: transparent; border-block: 1px solid var(--border); }
+.stats-band { padding-block: var(--s16); background: var(--bg-2); border-block: 1px solid var(--border); }
 .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s8); }
 .stat-block { display: flex; flex-direction: column; gap: var(--s2); padding-inline: var(--s5); position: relative; }
 .stat-block + .stat-block::before {
@@ -409,7 +409,7 @@ main {
 .pillar-desc { font-size: .85rem; color: var(--text-muted); line-height: 1.65; }
 
 /* ---------- 11. SERVICES (plain, no icon boxes) ---------- */
-.services { background: transparent; }
+.services { background: var(--bg-2); }
 .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s6); align-items: stretch; }
 .service-card {
   position: relative;
@@ -584,7 +584,7 @@ main {
 }
 
 /* ---------- 11c. SOLUTION CONCEPTS ---------- */
-.projects { background: transparent; }
+.projects { background: var(--bg-2); }
 .projects-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr 1fr;

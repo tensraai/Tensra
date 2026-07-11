@@ -184,15 +184,12 @@ function initGlobeParallax() {
   if (!scene) return;
 
   function update() {
-    const docHeight = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
-    // The globe itself does not move or rotate — it stays perfectly still.
-    // This only fades it out gently near the very end of the page.
-    const fadeStart = docHeight * 0.7;
-    const fadeRange = docHeight * 0.3;
-    const fadeProgress = Math.min(Math.max((window.scrollY - fadeStart) / fadeRange, 0), 1);
-
-    const baseOpacity = 0.9;
-    const opacity = baseOpacity * (1 - fadeProgress);
+    // The globe belongs to the hero only. It stays still (no rotation) and
+    // fades out over roughly one viewport of scroll, so it's fully gone
+    // well before the next section — it does not persist down the page.
+    const fadeDistance = window.innerHeight * 0.85;
+    const progress = Math.min(window.scrollY / fadeDistance, 1);
+    const opacity = 0.9 * (1 - progress);
 
     scene.style.opacity = opacity.toFixed(3);
   }
