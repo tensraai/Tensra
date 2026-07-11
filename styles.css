@@ -224,109 +224,141 @@ h1, h2, h3, h4 {
 .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.6px) rotate(-45deg); }
 
-/* ---------- 7. HERO (text left, radar graphic right) ---------- */
+/* ---------- 7. HERO — centered 3D wireframe globe with overlapping serif headline ---------- */
 .hero {
-  padding-top: calc(var(--nav-h) + var(--s20));
+  position: relative;
+  padding-top: calc(var(--nav-h) + var(--s16));
   padding-bottom: var(--s20);
   background: var(--bg);
   overflow: hidden;
-}
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: var(--s16);
-  align-items: center;
-}
-.hero-inner {
-  max-width: 620px;
-}
-.hero-eyebrow {
-  margin-bottom: var(--s4);
-}
-.hero-headline {
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.12;
-  color: var(--text);
-  margin-bottom: var(--s6);
-}
-.hero-subheadline {
-  font-size: clamp(1rem, 1.3vw, 1.1rem);
-  color: var(--text-soft);
-  line-height: 1.8;
-  max-width: 520px;
-  margin-bottom: var(--s8);
-}
-.hero-cta-group {
-  display: flex; gap: var(--s4); flex-wrap: wrap;
-}
-
-/* ---------- 7b. HERO RADAR GRAPHIC ---------- */
-.hero-radar {
-  width: 100%;
-  aspect-ratio: 1 / 1;
+  min-height: 92vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-.radar-svg {
-  width: 100%;
-  height: 100%;
-}
-.radar-tickmarks line {
-  vector-effect: non-scaling-stroke;
-}
-.radar-rotate-slow {
-  transform-origin: 200px 200px;
-  animation: radar-spin 60s linear infinite;
-}
-@keyframes radar-spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-.radar-orbit-1 {
-  transform-origin: 200px 200px;
-  animation: radar-orbit-a 18s linear infinite;
-}
-.radar-orbit-2 {
-  transform-origin: 200px 200px;
-  animation: radar-orbit-b 24s linear infinite reverse;
-}
-.radar-orbit-3 {
-  transform-origin: 200px 200px;
-  animation: radar-orbit-c 14s ease-in-out infinite;
-}
-@keyframes radar-orbit-a {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-@keyframes radar-orbit-b {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-@keyframes radar-orbit-c {
-  0%, 100% { opacity: .55; transform: scale(1); }
-  50%      { opacity: 1;   transform: scale(1.3); }
 }
 
-@media (max-width: 1023px) {
-  .hero-grid { grid-template-columns: 1fr; gap: var(--s10); }
-  .hero-radar { max-width: 360px; margin-inline: auto; }
+/* ----- 3D globe scene ----- */
+.hero-globe-scene {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(760px, 82vw);
+  height: min(760px, 82vw);
+  perspective: 1400px;
+  z-index: 0;
+  pointer-events: none;
+}
+.hero-globe {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  animation: globe-drift 40s linear infinite;
+}
+@keyframes globe-drift {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(360deg); }
+}
+.globe-ring {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 50%;
+  opacity: 0;
+  transform-style: preserve-3d;
+  animation: ring-appear 900ms var(--ease) forwards;
+}
+/* each ring rotated to a different great-circle angle, like latitude/longitude lines */
+.globe-ring--1 { transform: rotateY(0deg);   animation-delay: .1s; }
+.globe-ring--2 { transform: rotateY(60deg);  animation-delay: .5s; }
+.globe-ring--3 { transform: rotateY(120deg); animation-delay: .9s; }
+.globe-ring--4 { transform: rotateX(60deg);  animation-delay: 1.3s; }
+.globe-ring--v { transform: rotateY(90deg);  animation-delay: 1.7s; border-color: rgba(255,255,255,0.14); }
+.globe-ring--h { transform: rotateX(90deg);  animation-delay: 2.0s; border-color: rgba(255,255,255,0.06); }
+
+@keyframes ring-appear {
+  from { opacity: 0; transform: var(--ring-rot, none) scale(.85); }
+  to   { opacity: 1; }
+}
+.globe-ring--1 { --ring-rot: rotateY(0deg); }
+.globe-ring--2 { --ring-rot: rotateY(60deg); }
+.globe-ring--3 { --ring-rot: rotateY(120deg); }
+.globe-ring--4 { --ring-rot: rotateX(60deg); }
+.globe-ring--v { --ring-rot: rotateY(90deg); }
+.globe-ring--h { --ring-rot: rotateX(90deg); }
+
+/* glowing pole dots */
+.globe-dot {
+  position: absolute;
+  left: 50%;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: dot-appear 1.2s var(--ease) forwards;
+}
+.globe-dot--top {
+  top: 4%;
+  background: radial-gradient(circle, #6fe3ff 0%, rgba(111,227,255,0) 70%);
+  box-shadow: 0 0 24px 6px rgba(111,227,255,0.45);
+  animation-delay: 2.3s;
+}
+.globe-dot--bottom {
+  bottom: 4%;
+  background: radial-gradient(circle, #ffd23d 0%, rgba(255,210,61,0) 70%);
+  box-shadow: 0 0 24px 6px rgba(255,210,61,0.35);
+  animation-delay: 2.5s;
+}
+@keyframes dot-appear {
+  0%   { opacity: 0; transform: translateX(-50%) scale(.4); }
+  60%  { opacity: 1; transform: translateX(-50%) scale(1.15); }
+  100% { opacity: .9; transform: translateX(-50%) scale(1); }
+}
+
+/* ----- centered hero text, overlapping the globe ----- */
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 880px;
+  margin-inline: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-eyebrow {
+  margin-bottom: var(--s6);
+}
+.hero-headline--serif {
+  font-family: 'Playfair Display', var(--font-display), serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(2.1rem, 4.4vw, 3.4rem);
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+  color: var(--text);
+  max-width: 14ch;
+  margin-bottom: var(--s10);
+}
+.hero-cta-group {
+  display: flex; gap: var(--s4); flex-wrap: wrap; justify-content: center;
+  margin-bottom: var(--s10);
+}
+.hero-subheadline--under {
+  font-size: .98rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 48ch;
 }
 
 @media (max-width: 767px) {
-  .hero { padding-top: calc(var(--nav-h) + var(--s12)); padding-bottom: var(--s12); }
-  .hero-headline { font-size: clamp(2rem, 8vw, 2.6rem); }
-  .hero-cta-group { flex-direction: column; }
+  .hero { padding-top: calc(var(--nav-h) + var(--s10)); padding-bottom: var(--s12); min-height: auto; }
+  .hero-globe-scene { width: 92vw; height: 92vw; }
+  .hero-headline--serif { font-size: clamp(1.6rem, 7vw, 2.1rem); max-width: 16ch; }
   .hero-cta-group .btn { width: 100%; max-width: 320px; justify-content: center; }
-  .hero-radar { max-width: 280px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .radar-rotate-slow, .radar-orbit-1, .radar-orbit-2, .radar-orbit-3 {
-    animation: none;
-  }
+  .hero-globe { animation: none; }
+  .globe-ring, .globe-dot { animation: none; opacity: 1; }
 }
 
 /* ---------- 9. STATS BAND ---------- */
