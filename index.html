@@ -30,6 +30,21 @@
 </head>
 <body>
 
+  <!-- Fixed background globe — lives at body level, not inside any section,
+       so no section's overflow/stacking can clip or cover it. -->
+  <div class="hero-globe-scene" aria-hidden="true">
+    <div class="hero-globe">
+      <div class="globe-ring globe-ring--1"></div>
+      <div class="globe-ring globe-ring--2"></div>
+      <div class="globe-ring globe-ring--3"></div>
+      <div class="globe-ring globe-ring--4"></div>
+      <div class="globe-ring globe-ring--v"></div>
+      <div class="globe-ring globe-ring--h"></div>
+    </div>
+    <div class="globe-dot globe-dot--top"></div>
+    <div class="globe-dot globe-dot--bottom"></div>
+  </div>
+
   <!-- ===== NAV ===== -->
   <header class="nav-header" id="nav-header">
     <nav class="nav-container">
@@ -56,21 +71,8 @@
 
   <main>
 
-    <!-- ===== HERO (centered globe, overlapping serif headline) ===== -->
+    <!-- ===== HERO (centered, overlapping serif headline — globe lives at body level, see top of file) ===== -->
     <section class="hero" id="hero" aria-label="Hero">
-      <div class="hero-globe-scene" aria-hidden="true">
-        <div class="hero-globe">
-          <div class="globe-ring globe-ring--1"></div>
-          <div class="globe-ring globe-ring--2"></div>
-          <div class="globe-ring globe-ring--3"></div>
-          <div class="globe-ring globe-ring--4"></div>
-          <div class="globe-ring globe-ring--v"></div>
-          <div class="globe-ring globe-ring--h"></div>
-        </div>
-        <div class="globe-dot globe-dot--top"></div>
-        <div class="globe-dot globe-dot--bottom"></div>
-      </div>
-
       <div class="container hero-inner">
         <p class="hero-eyebrow">Enterprise AI Systems Studio</p>
 
