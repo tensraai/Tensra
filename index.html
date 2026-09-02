@@ -30,19 +30,47 @@
 </head>
 <body>
 
-  <!-- Fixed background globe — lives at body level, not inside any section,
+  <!-- Fixed background AI network graphic — lives at body level, not inside any section,
        so no section's overflow/stacking can clip or cover it. -->
-  <div class="hero-globe-scene" aria-hidden="true">
-    <div class="hero-globe">
-      <div class="globe-ring globe-ring--1"></div>
-      <div class="globe-ring globe-ring--2"></div>
-      <div class="globe-ring globe-ring--3"></div>
-      <div class="globe-ring globe-ring--4"></div>
-      <div class="globe-ring globe-ring--v"></div>
-      <div class="globe-ring globe-ring--h"></div>
-    </div>
-    <div class="globe-dot globe-dot--top"></div>
-    <div class="globe-dot globe-dot--bottom"></div>
+  <div class="hero-network-scene" aria-hidden="true">
+    <svg class="hero-network" viewBox="0 0 600 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g class="network-edges" stroke="rgba(255,255,255,0.12)" stroke-width="1">
+        <line x1="300" y1="90"  x2="150" y2="200"/>
+        <line x1="300" y1="90"  x2="420" y2="180"/>
+        <line x1="150" y1="200" x2="90"  y2="330"/>
+        <line x1="150" y1="200" x2="270" y2="290"/>
+        <line x1="420" y1="180" x2="500" y2="300"/>
+        <line x1="420" y1="180" x2="300" y2="300"/>
+        <line x1="270" y1="290" x2="300" y2="300"/>
+        <line x1="270" y1="290" x2="180" y2="420"/>
+        <line x1="300" y1="300" x2="500" y2="300"/>
+        <line x1="300" y1="300" x2="380" y2="430"/>
+        <line x1="90"  y1="330" x2="180" y2="420"/>
+        <line x1="500" y1="300" x2="440" y2="440"/>
+        <line x1="180" y1="420" x2="270" y2="520"/>
+        <line x1="380" y1="430" x2="440" y2="440"/>
+        <line x1="380" y1="430" x2="300" y2="540"/>
+        <line x1="440" y1="440" x2="380" y2="560"/>
+        <line x1="270" y1="520" x2="300" y2="540"/>
+        <line x1="300" y1="540" x2="380" y2="560"/>
+      </g>
+      <g class="network-nodes" fill="rgba(255,255,255,0.55)">
+        <circle cx="300" cy="90"  r="4"/>
+        <circle cx="150" cy="200" r="4"/>
+        <circle cx="420" cy="180" r="4"/>
+        <circle cx="90"  cy="330" r="4"/>
+        <circle cx="270" cy="290" r="4"/>
+        <circle cx="500" cy="300" r="4"/>
+        <circle cx="180" cy="420" r="4"/>
+        <circle cx="440" cy="440" r="4"/>
+        <circle cx="270" cy="520" r="4"/>
+        <circle cx="380" cy="560" r="4"/>
+      </g>
+      <g class="network-nodes-active" fill="#1AC5FF">
+        <circle cx="300" cy="300" r="6" class="network-node-pulse network-node-pulse--1"/>
+        <circle cx="380" cy="430" r="6" class="network-node-pulse network-node-pulse--2"/>
+      </g>
+    </svg>
   </div>
 
   <!-- ===== NAV ===== -->
