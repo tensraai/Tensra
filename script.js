@@ -57,7 +57,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const REVEAL_SELECTORS = [
   '.section-header', '.about-content', '.pillar-card', '.service-card',
   '.process-step',
-  '.contact-info', '.contact-form-wrapper', '.stat-block'
+  '.contact-info', '.contact-form-wrapper', '.stat-block',
+  '.brikline-main', '.brikline-flow', '.project-card', '.use-case-item'
 ];
 
 function addRevealClasses() {

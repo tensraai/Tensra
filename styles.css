@@ -1,5 +1,5 @@
 /* ============================================================
-   TENSRA AI — STYLESHEET  v5
+   TENSRA AI — STYLESHEET  v6
    Plain, text-first, Tribe.ai-style layout
    ============================================================ */
 
@@ -647,6 +647,9 @@ main {
   .footer-inner { grid-template-columns: 1fr 1fr; gap: var(--s8); }
   .footer-brand { grid-column: 1 / -1; }
   .results-grid { grid-template-columns: 1fr; }
+  .brikline-grid { grid-template-columns: 1fr; }
+  .brikline-flow { flex-direction: row; flex-wrap: wrap; max-width: none; }
+  .brikline-flow-arrow { transform: rotate(-90deg); }
 }
 
 @media (max-width: 599px) {
@@ -664,6 +667,8 @@ main {
     padding: var(--s4) var(--s6) var(--s6);
     transform: translateY(-8px); opacity: 0; pointer-events: none;
     transition: transform var(--t), opacity var(--t);
+    max-height: calc(100vh - var(--nav-h));
+    overflow-y: auto;
   }
   .nav-links.open { display: flex; transform: translateY(0); opacity: 1; pointer-events: auto; }
   .nav-link { display: block; padding: var(--s3) 0; font-size: 1rem; border-bottom: 1px solid var(--border); }
@@ -688,6 +693,10 @@ main {
 
   .footer-inner { grid-template-columns: 1fr; gap: var(--s8); }
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: var(--s2); }
+
+  .brikline-flow { flex-direction: column; }
+  .brikline-flow-arrow { transform: none; }
+  .brikline-badges { flex-wrap: wrap; }
 }
 
 /* ---------- 19. A11Y / MISC ---------- */
@@ -762,4 +771,98 @@ main {
 
 @media (max-width: 767px) {
   .results-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   22. BRIKLINE — flagship case study section
+   ============================================================ */
+.brikline { background: var(--bg-2); border-block: 1px solid var(--border); }
+
+.brikline-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--s16);
+  align-items: start;
+}
+
+.brikline-main { display: flex; flex-direction: column; gap: var(--s6); }
+
+.brikline-logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  background: #ffffff;
+  border-radius: var(--radius);
+  padding: var(--s3) var(--s5);
+}
+.brikline-logo { width: 130px; height: auto; display: block; }
+
+.brikline-badges { display: flex; gap: var(--s3); flex-wrap: wrap; }
+.brikline-badge {
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent-line);
+  border-radius: 999px;
+  padding: .35rem .8rem;
+}
+
+.brikline-desc {
+  font-size: 1.02rem;
+  color: var(--text-soft);
+  line-height: 1.85;
+}
+
+.brikline-features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--s6);
+}
+.brikline-features li {
+  display: flex; gap: var(--s3); align-items: flex-start;
+  font-size: .88rem; color: var(--text-soft); line-height: 1.6;
+}
+.brikline-features li::before {
+  content: '–'; color: var(--accent); flex-shrink: 0;
+  font-family: var(--font-mono); font-size: .82rem;
+}
+
+.brikline-main > .btn { align-self: flex-start; }
+
+/* the workflow strip on the right */
+.brikline-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--s2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--s6);
+  background: var(--bg);
+}
+.brikline-flow-step {
+  font-family: var(--font-mono);
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: var(--text);
+  text-align: center;
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius);
+  padding: .65rem .5rem;
+  transition: border-color var(--t);
+}
+.brikline-flow-step:hover { border-color: var(--border-hover); }
+.brikline-flow-step--last { color: var(--accent); border-color: var(--accent-line); }
+.brikline-flow-arrow {
+  text-align: center;
+  color: var(--text-faint);
+  font-size: .8rem;
+  line-height: 1;
 }
