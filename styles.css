@@ -280,78 +280,67 @@ main {
   z-index: 1;
 }
 
-/* ----- 3D globe scene ----- */
-.hero-globe-scene {
+/* ----- AI network graph scene — small, quiet corner accent ----- */
+.hero-network-scene {
   position: fixed;
-  top: 46%; left: 78%;
-  transform: translate(-50%, -50%);
-  width: min(620px, 62vw);
-  height: min(620px, 62vw);
-  perspective: 1400px;
+  top: calc(var(--nav-h) + 3rem);
+  right: 4vw;
+  transform: none;
+  width: min(280px, 26vw);
+  height: min(245px, 22vw);
   z-index: 1;
   pointer-events: none;
-  will-change: opacity, transform;
-  opacity: .5;
+  will-change: opacity;
+  opacity: .4;
 }
-.hero-globe {
-  position: absolute;
-  inset: 0;
-  transform-style: preserve-3d;
-}
-.globe-ring {
-  position: absolute;
-  inset: 0;
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 50%;
+.hero-network { width: 100%; height: 100%; }
+.network-edges line {
+  stroke-dasharray: 6;
   opacity: 0;
-  transform-style: preserve-3d;
-  animation: ring-appear 900ms var(--ease) forwards;
+  animation: edge-appear 900ms var(--ease) forwards;
 }
-/* each ring rotated to a different great-circle angle, like latitude/longitude lines */
-.globe-ring--1 { transform: rotateY(0deg);   animation-delay: .1s; }
-.globe-ring--2 { transform: rotateY(60deg);  animation-delay: .5s; }
-.globe-ring--3 { transform: rotateY(120deg); animation-delay: .9s; }
-.globe-ring--4 { transform: rotateX(60deg);  animation-delay: 1.3s; }
-.globe-ring--v { transform: rotateY(90deg);  animation-delay: 1.7s; border-color: rgba(255,255,255,0.14); }
-.globe-ring--h { transform: rotateX(90deg);  animation-delay: 2.0s; border-color: rgba(255,255,255,0.06); }
-
-@keyframes ring-appear {
-  from { opacity: 0; transform: var(--ring-rot, none) scale(.85); }
+.network-edges line:nth-child(1)  { animation-delay: .05s; }
+.network-edges line:nth-child(2)  { animation-delay: .12s; }
+.network-edges line:nth-child(3)  { animation-delay: .19s; }
+.network-edges line:nth-child(4)  { animation-delay: .26s; }
+.network-edges line:nth-child(5)  { animation-delay: .33s; }
+.network-edges line:nth-child(6)  { animation-delay: .40s; }
+.network-edges line:nth-child(7)  { animation-delay: .47s; }
+.network-edges line:nth-child(8)  { animation-delay: .54s; }
+.network-edges line:nth-child(9)  { animation-delay: .61s; }
+.network-edges line:nth-child(10) { animation-delay: .68s; }
+.network-edges line:nth-child(11) { animation-delay: .75s; }
+.network-edges line:nth-child(12) { animation-delay: .82s; }
+.network-edges line:nth-child(13) { animation-delay: .89s; }
+.network-edges line:nth-child(14) { animation-delay: .96s; }
+.network-edges line:nth-child(15) { animation-delay: 1.03s; }
+.network-edges line:nth-child(16) { animation-delay: 1.10s; }
+.network-edges line:nth-child(17) { animation-delay: 1.17s; }
+.network-edges line:nth-child(18) { animation-delay: 1.24s; }
+@keyframes edge-appear {
+  from { opacity: 0; }
   to   { opacity: 1; }
 }
-.globe-ring--1 { --ring-rot: rotateY(0deg); }
-.globe-ring--2 { --ring-rot: rotateY(60deg); }
-.globe-ring--3 { --ring-rot: rotateY(120deg); }
-.globe-ring--4 { --ring-rot: rotateX(60deg); }
-.globe-ring--v { --ring-rot: rotateY(90deg); }
-.globe-ring--h { --ring-rot: rotateX(90deg); }
-
-/* glowing pole dots */
-.globe-dot {
-  position: absolute;
-  left: 50%;
-  width: 14px; height: 14px;
-  border-radius: 50%;
-  transform: translateX(-50%);
+.network-nodes circle {
   opacity: 0;
-  animation: dot-appear 1.2s var(--ease) forwards;
+  animation: node-appear 600ms var(--ease) forwards;
+  animation-delay: 1.3s;
 }
-.globe-dot--top {
-  top: 4%;
-  background: radial-gradient(circle, #6fe3ff 0%, rgba(111,227,255,0) 70%);
-  box-shadow: 0 0 24px 6px rgba(111,227,255,0.45);
-  animation-delay: 2.3s;
+@keyframes node-appear {
+  from { opacity: 0; transform: scale(.4); }
+  to   { opacity: 1; transform: scale(1); }
 }
-.globe-dot--bottom {
-  bottom: 4%;
-  background: radial-gradient(circle, #ffd23d 0%, rgba(255,210,61,0) 70%);
-  box-shadow: 0 0 24px 6px rgba(255,210,61,0.35);
-  animation-delay: 2.5s;
+/* the one or two "active" nodes light up in accent cyan, everything else stays neutral */
+.network-node-pulse {
+  transform-origin: center;
+  transform-box: fill-box;
+  filter: drop-shadow(0 0 6px rgba(26,197,255,.8));
+  animation: node-pulse 2.6s var(--ease) infinite;
 }
-@keyframes dot-appear {
-  0%   { opacity: 0; transform: translateX(-50%) scale(.4); }
-  60%  { opacity: 1; transform: translateX(-50%) scale(1.15); }
-  100% { opacity: .9; transform: translateX(-50%) scale(1); }
+.network-node-pulse--2 { animation-delay: 1.3s; }
+@keyframes node-pulse {
+  0%, 100% { opacity: .55; transform: scale(1); }
+  50%      { opacity: 1;   transform: scale(1.25); }
 }
 
 /* ----- left-aligned hero text ----- */
@@ -394,10 +383,7 @@ main {
   font-size: clamp(2.4rem, 5.4vw, 4.2rem);
   letter-spacing: -0.03em;
   line-height: 1.08;
-  background: linear-gradient(180deg, #ffffff 0%, #ffffff 55%, #b9c3de 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--text);
   margin-bottom: var(--s5);
 }
 .hero-tagline {
@@ -422,14 +408,13 @@ main {
 
 @media (max-width: 767px) {
   .hero { padding-top: calc(var(--nav-h) + var(--s10)); padding-bottom: var(--s12); min-height: auto; }
-  .hero-globe-scene { display: none; }
+  .hero-network-scene { display: none; }
   .hero-headline { font-size: clamp(2rem, 8.5vw, 2.6rem); }
   .hero-cta-group .btn { width: 100%; max-width: 320px; justify-content: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-globe { animation: none; }
-  .globe-ring, .globe-dot { animation: none; opacity: 1; }
+  .network-edges line, .network-nodes circle, .network-node-pulse { animation: none; opacity: 1; }
 }
 
 /* ---------- 9. CREDIBILITY — checklist + icon value cards ---------- */
