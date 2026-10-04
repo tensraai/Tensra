@@ -941,3 +941,22 @@ main {
   font-size: .8rem;
   line-height: 1;
 }
+
+/* ============================================================
+   23. LIVE DEMO
+   Reuses the Brikline layout classes; only extras live here.
+   ============================================================ */
+.demo-actions { display: flex; gap: var(--s4); flex-wrap: wrap; }
+.demo-note { font-size: .8rem; color: var(--text-muted); line-height: 1.6; max-width: 56ch; }
+
+/* The extra nav link needs a little room on mid-size screens */
+@media (max-width: 1279px) {
+  .nav-links { gap: var(--s5); }
+  .nav-link { font-size: .88rem; }
+}
+@media (min-width: 768px) and (max-width: 1099px) {
+  .nav-cta-desktop { display: none; }
+}
+@media (max-width: 767px) {
+  .demo-actions .btn { width: 100%; }
+}

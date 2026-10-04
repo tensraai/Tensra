@@ -200,12 +200,35 @@ function initGlobeParallax() {
   update();
 }
 
+/* ===== 7. LIVE DEMO WAKE-UP ===== */
+// The demo runs on a free host that sleeps when idle. Ping it shortly before
+// the visitor reaches the demo section so it is usually awake when they click.
+const DEMO_URL = 'https://tensra-demo.onrender.com';
+function wakeDemoServer() {
+  const section = document.getElementById('live-demo');
+  if (!section) return;
+  let woke = false;
+  const wake = () => {
+    if (woke) return;
+    woke = true;
+    fetch(DEMO_URL + '/api/health', { mode: 'no-cors', cache: 'no-store' }).catch(() => {});
+  };
+  if (!('IntersectionObserver' in window)) { wake(); return; }
+  const obs = new IntersectionObserver((entries) => {
+    if (entries.some(e => e.isIntersecting)) { wake(); obs.disconnect(); }
+  }, { rootMargin: '1200px 0px' });
+  obs.observe(section);
+  const navLink = document.querySelector('a[href="#live-demo"]');
+  if (navLink) navLink.addEventListener('mouseenter', wake, { once: true });
+}
+
 /* ===== 8. INIT ===== */
 function init() {
   addRevealClasses();
   createRevealObserver();
   initScrollSpy();
   initGlobeParallax();
+  wakeDemoServer();
 }
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
 else init();

@@ -66,6 +66,7 @@
       </a>
       <ul class="nav-links" id="nav-links" role="list">
         <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#live-demo" class="nav-link">Live Demo</a></li>
         <li><a href="#brikline" class="nav-link">Brikline</a></li>
         <li><a href="#use-cases" class="nav-link">When You Need Us</a></li>
         <li><a href="#solution-concepts" class="nav-link">Solution Concepts</a></li>
@@ -249,6 +250,58 @@
             <a href="#contact" class="btn btn-outline btn-full service-cta">Productionize Your AI</a>
           </article>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LIVE DEMO — CRM → ERP integration ===== -->
+    <section class="live-demo section" id="live-demo" aria-labelledby="live-demo-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Live demo</div>
+          <h2 class="section-heading" id="live-demo-heading">See a CRM → ERP integration in action.</h2>
+          <p class="section-subheading">A simulated HubSpot deal is converted into an ERP sales order, with validation, field mapping, duplicate protection, two-way sync and automatic recovery when the ERP fails.</p>
+        </div>
+
+        <div class="brikline-grid">
+          <div class="brikline-main reveal">
+            <div class="brikline-badges">
+              <span class="brikline-badge">Interactive demo</span>
+              <span class="brikline-badge">HubSpot → ERP</span>
+              <span class="brikline-badge">Simulated data</span>
+            </div>
+            <p class="brikline-desc">Sales teams close deals in HubSpot, then operations re-types the customer and order into the ERP by hand. This demo shows that work happening automatically, using the same kind of validation, retry and duplicate-protection logic we build for client integrations.</p>
+
+            <ul class="brikline-features" role="list">
+              <li>Run a deal from Closed Won to an ERP sales order in seconds</li>
+              <li>Simulate an ERP outage and watch retries recover the order</li>
+              <li>Send bad data and see it caught before it reaches the ERP</li>
+              <li>Send the same webhook twice and see no duplicate order created</li>
+              <li>Mark the order fulfilled and watch HubSpot update by itself</li>
+            </ul>
+
+            <div class="demo-actions">
+              <a href="https://tensra-demo.onrender.com" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">Launch live demo →</a>
+              <a href="#contact" class="btn btn-ghost btn-lg">Discuss an Integration</a>
+            </div>
+            <p class="demo-note">Uses a simulated HubSpot and a mock ERP with sample data. If the demo hasn't been opened recently, the first load can take up to a minute.</p>
+          </div>
+
+          <div class="brikline-flow reveal" aria-label="Demo workflow">
+            <div class="brikline-flow-step">HubSpot Deal Closed Won</div>
+            <div class="brikline-flow-arrow" aria-hidden="true">↓</div>
+            <div class="brikline-flow-step">Webhook</div>
+            <div class="brikline-flow-arrow" aria-hidden="true">↓</div>
+            <div class="brikline-flow-step">Validate</div>
+            <div class="brikline-flow-arrow" aria-hidden="true">↓</div>
+            <div class="brikline-flow-step">Map Fields</div>
+            <div class="brikline-flow-arrow" aria-hidden="true">↓</div>
+            <div class="brikline-flow-step">Match Customer</div>
+            <div class="brikline-flow-arrow" aria-hidden="true">↓</div>
+            <div class="brikline-flow-step">ERP Sales Order</div>
+            <div class="brikline-flow-arrow" aria-hidden="true">↓</div>
+            <div class="brikline-flow-step brikline-flow-step--last">HubSpot Updated</div>
+          </div>
         </div>
       </div>
     </section>
