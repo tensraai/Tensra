@@ -1,5 +1,9 @@
 'use server'
 
+import { Resend } from 'resend'
+
+const resend = new Resend(process.env.RESEND_API_KEY)
+
 export type ContactState = {
   status: 'idle' | 'success' | 'error'
   message?: string
@@ -20,8 +24,10 @@ export async function submitContact(_prev: ContactState, formData: FormData): Pr
     message: get('message'),
   }
 
+  // Honeypot check for spam bots
   if (get('website')) return { status: 'success' }
 
+  // Validation
   const errors: ContactState['errors'] = {}
   if (values.name.length < 2 || values.name.length > 100) errors.name = 'Please enter your name.'
   if (!emailPattern.test(values.email) || values.email.length > 200) errors.email = 'Please enter a valid work email.'
@@ -34,13 +40,32 @@ export async function submitContact(_prev: ContactState, formData: FormData): Pr
     return { status: 'error', message: 'Please fix the highlighted fields.', errors, values }
   }
 
-  console.log('[contact] New enquiry', {
-    name: values.name,
-    email: values.email,
-    company: values.company,
-    type: values.type,
-    length: values.message.length,
-  })
+  try {
+    // Send email via Resend
+    await resend.emails.send({
+      from: 'Tensra AI Contact <onboarding@resend.dev>', // You can verify tensraai.com domain on Resend later to use hello@tensraai.com as sender
+      to: 'hello@tensraai.com',
+      replyTo: values.email, // Allows clicking 'Reply' in email client to email the client back directly
+      subject: `[New Enquiry] ${values.name} - ${values.type}`,
+      html: `
+        <h2>New Website Enquiry</h2>
+        <p><strong>Name:</strong> ${values.name}</p>
+        <p><strong>Work Email:</strong> ${values.email}</p>
+        <p><strong>Company:</strong> ${values.company || 'N/A'}</p>
+        <p><strong>Project Type:</strong> ${values.type}</p>
+        <hr />
+        <h3>Message / Requirements:</h3>
+        <p style="white-space: pre-wrap;">${values.message}</p>
+      `,
+    })
 
-  return { status: 'success', values }
+    return { status: 'success', values }
+  } catch (error) {
+    console.error('[contact] Failed to send email:', error)
+    return {
+      status: 'error',
+      message: 'Failed to send message. Please try again or email us directly.',
+      values,
+    }
+  }
 }
