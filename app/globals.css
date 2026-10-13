@@ -1,0 +1,350 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-plex), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-slate-brand: var(--slate-brand);
+  --color-navy-brand: var(--navy-brand);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-accent-ink: var(--accent-ink);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* Tensra AI brand palette, preserved from tensraai.com */
+:root {
+  color-scheme: dark;
+  --background: #080a10;
+  --foreground: #eef1f8;
+  --card: #0e121b;
+  --card-foreground: #eef1f8;
+  --popover: #111520;
+  --popover-foreground: #eef1f8;
+  --primary: #1ac5ff;
+  --primary-foreground: #04121a;
+  --secondary: #151a27;
+  --secondary-foreground: #eef1f8;
+  --muted: #121724;
+  --muted-foreground: #9ba5c0;
+  --accent: #151b29;
+  --accent-foreground: #eef1f8;
+  --destructive: #ff6b6b;
+  --border: rgba(255, 255, 255, 0.09);
+  --input: rgba(255, 255, 255, 0.14);
+  --ring: #1ac5ff;
+  --slate-brand: #6b7591;
+  --navy-brand: #454e63;
+  --paper: #f3f6fb;
+  --ink: #0b1020;
+  --ink-muted: #41506b;
+  --accent-ink: #066a94;
+  --success: #3ddc97;
+  --warning: #ffb547;
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    overflow-x: hidden;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+  }
+}
+
+@utility grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@utility hero-glow {
+  background:
+    radial-gradient(800px 420px at 80% 10%, rgba(26, 197, 255, 0.13), transparent 60%),
+    radial-gradient(600px 360px at 0% 100%, rgba(107, 117, 145, 0.14), transparent 60%);
+}
+
+@keyframes dash-flow {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+@keyframes pulse-node {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@utility animate-dash {
+  stroke-dasharray: 4 8;
+  animation: dash-flow 1.2s linear infinite;
+}
+@utility animate-pulse-node {
+  animation: pulse-node 2.4s ease-in-out infinite;
+}
+
+@keyframes aurora {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(60px, -40px, 0) scale(1.12);
+  }
+  66% {
+    transform: translate3d(-50px, 30px, 0) scale(0.92);
+  }
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes shimmer {
+  to {
+    background-position: -200% center;
+  }
+}
+@keyframes grid-drift {
+  to {
+    background-position: 48px 48px;
+  }
+}
+@keyframes sheen {
+  0% {
+    transform: translateX(-120%) skewX(-20deg);
+  }
+  60%,
+  100% {
+    transform: translateX(260%) skewX(-20deg);
+  }
+}
+
+@utility aurora-blob {
+  position: absolute;
+  border-radius: 9999px;
+  background: radial-gradient(closest-side, currentColor, transparent);
+  animation: aurora 18s ease-in-out infinite;
+  will-change: transform;
+}
+@utility aurora-delay {
+  animation-delay: -6s;
+  animation-duration: 22s;
+}
+@utility aurora-delay-2 {
+  animation-delay: -12s;
+  animation-duration: 26s;
+}
+@utility marquee {
+  animation: marquee 32s linear infinite;
+}
+@utility grid-drift {
+  animation: grid-drift 6s linear infinite;
+}
+@utility text-shimmer {
+  background-image: linear-gradient(90deg, #1ac5ff 0%, #b8eeff 25%, #1ac5ff 50%, #b8eeff 75%, #1ac5ff 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+@utility btn-sheen {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 40%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+    animation: sheen 3.6s ease-in-out infinite;
+    pointer-events: none;
+  }
+}
+@utility card-lift {
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s,
+    box-shadow 0.4s;
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(26, 197, 255, 0.35);
+    box-shadow: 0 24px 60px -24px rgba(26, 197, 255, 0.35);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .motion-hide {
+    display: none;
+  }
+}
+
+@property --border-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes border-spin {
+  to {
+    --border-angle: 360deg;
+  }
+}
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Rotating gradient border for hero-level cards */
+@utility glow-border {
+  position: relative;
+  isolation: isolate;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit;
+    padding: 1px;
+    background: conic-gradient(
+      from var(--border-angle),
+      transparent 0%,
+      rgba(26, 197, 255, 0.9) 10%,
+      transparent 22%,
+      transparent 50%,
+      rgba(143, 227, 255, 0.6) 60%,
+      transparent 72%
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: border-spin 6s linear infinite;
+    pointer-events: none;
+  }
+}
+
+@utility float-slow {
+  animation: float-y 6s ease-in-out infinite;
+}
+
+/* Pointer-follow glow, positioned by the Spotlight component via --mx / --my */
+@utility spotlight {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s;
+    background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(26, 197, 255, 0.14), transparent 45%);
+  }
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+@utility tilt {
+  transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@utility nav-underline {
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.25rem;
+    height: 1px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  &:hover::after,
+  &[aria-current='page']::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+/* Lets the browser skip rendering off-screen sections until they approach the viewport */
+@utility lazy-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
