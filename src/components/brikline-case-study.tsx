@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { BRIKLINE_MODULES } from "@/lib/content";
-import logoAsset from "@/assets/brikline-logo-cropped.png.asset.json";
+import logo from "@/assets/brikline-logo-cropped.png";
 import { btnLine } from "@/components/site";
 
 const IMPACT = [
@@ -15,7 +15,7 @@ export function BriklineCaseStudy({ compact = false }: { compact?: boolean }) {
     <article aria-label="Brikline case study" className="border-y border-border">
       <header className="flex flex-col gap-5 border-b border-border py-6 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-7">
-          <img src={logoAsset.url} alt="Brikline" width={238} height={178} className="h-[88px] w-[118px] shrink-0 object-contain" />
+          <img src={logo} alt="Brikline" width={238} height={178} className="h-[88px] w-[118px] shrink-0 object-contain" />
           <div className="sm:border-l sm:border-border sm:pl-7">
             <p className="text-base font-semibold text-navy">Residential Construction</p>
             <p className="mt-1 text-sm text-muted-foreground">Xero Accounting Integration</p>
