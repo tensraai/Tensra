@@ -1,0 +1,155 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-signal: var(--signal);
+  --color-signal-soft: var(--signal-soft);
+  --color-success: var(--success);
+  --color-navy: var(--navy);
+  --color-navy-2: var(--navy-2);
+  --color-navy-3: var(--navy-3);
+  --color-on-navy: var(--on-navy);
+  --color-ink: var(--navy);
+  --color-paper: var(--on-navy);
+}
+
+:root {
+  --radius: 0.75rem;
+  --navy: #1e222f;
+  --navy-2: #181c26;
+  --navy-3: #2a2f3e;
+  --on-navy: #f8fafc;
+  --background: #ffffff;
+  --foreground: #1e222f;
+  --card: #ffffff;
+  --card-foreground: #1e222f;
+  --popover: #ffffff;
+  --popover-foreground: #1e222f;
+  --primary: #0a8fc2;
+  --primary-foreground: #ffffff;
+  --secondary: #f8fafc;
+  --secondary-foreground: #1e222f;
+  --muted: #f1f3f6;
+  --muted-foreground: #5a6480;
+  --accent: #eef1f5;
+  --accent-foreground: #1e222f;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #d9dadf;
+  --input: #c4c7d0;
+  --ring: #1ac5ff;
+  --signal: #1ac5ff;
+  --silver: #d9dadf;
+  --steel: #6b7591;
+  --slate: #5a6480;
+  --signal-soft: #e0f7fc;
+  --success: #059669;
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { letter-spacing: -0.025em; }
+  ::selection { background: color-mix(in oklab, var(--primary) 20%, transparent); }
+}
+
+/* ============= Motion ============= */
+
+/* Scroll/mount reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal[data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Hold page reveals until the intro curtain starts lifting. */
+html.intro-playing .reveal {
+  transition-delay: calc(var(--reveal-delay, 0ms) + 1150ms);
+}
+
+/* Intro loader */
+@keyframes tensra-block-in {
+  0% { opacity: 0; transform: translateY(14px) scale(0.4); }
+  65% { opacity: 1; transform: translateY(0) scale(1.08); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes tensra-word-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes tensra-line-in {
+  from { opacity: 0; transform: scaleX(0); }
+  to { opacity: 1; transform: scaleX(1); }
+}
+.intro-block {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: tensra-block-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.intro-word {
+  opacity: 0;
+  animation: tensra-word-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.intro-line {
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  animation: tensra-line-in 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .intro-block,
+  .intro-word,
+  .intro-line {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

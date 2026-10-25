@@ -1,9 +1,7 @@
 [build]
-  command = "pnpm build"
-  publish = ".next"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+  command = "npm run build"
+  publish = "dist"
 
 [build.environment]
-  PNPM_VERSION = "latest"
+  NITRO_PRESET = "netlify"
+  NODE_VERSION = "22"
